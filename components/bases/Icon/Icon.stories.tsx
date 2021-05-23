@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/react'
 import Icon, { Props } from '.'
-import React from 'react'
 
 export default {
   title: 'bases/Icon',
@@ -9,5 +8,5 @@ export default {
 
 export const Default: Story<Props> = (args) => <Icon {...args} />
 Default.args = {
-  type: 'Facebook',
+  type: 'facebook',
 }
