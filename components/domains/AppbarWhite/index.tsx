@@ -1,6 +1,6 @@
 import styles from './AppbarWhite.module.scss'
 import cn from 'classnames'
-import LogoWhite from './logo_white.svg'
+import LogoWhite from '../../../public/logo_white.svg'
 // import LogoWhite from './LogoWhite'
 
 export type Props = {
