@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Icon.module.scss'
+import styles from './IconCompo.module.scss'
 import cn from 'classnames'
 import Facebook from './Icons/facebook'
 import DoubleUp from './Icons/doubleUp'
@@ -21,7 +21,7 @@ const svgMap = {
 
 export type Type = keyof typeof svgMap //enum(列挙型=またはまたはまたは)
 
-const Icon: React.FC<Props> = ({ type, className }) => {
+const IconCompo: React.FC<Props> = ({ type, className }) => {
   const SvgComponent = svgMap[type]
   return (
     <div className={cn(styles.default, className)}>
@@ -30,4 +30,4 @@ const Icon: React.FC<Props> = ({ type, className }) => {
   )
 }
 
-export default Icon
+export default IconCompo

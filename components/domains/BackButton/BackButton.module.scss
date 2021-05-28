@@ -1,0 +1,30 @@
+@media screen and (max-width: 600px) {
+  .default {
+    width: 100vw;
+    text-align: center;
+    .icon {
+      margin: 50% 0 30% 0;
+    }
+    .right {
+      font-family: 'Josefin Sans';
+      font-weight: 300;
+      font-size: small;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .default {
+    width: 100%;
+    text-align: center;
+    // margin: 30% 0 30% 0;
+    .icon {
+      margin: 10% 0 10% 0;
+    }
+    .right {
+      font-family: 'Josefin Sans';
+      font-weight: 300;
+      font-size: small;
+    }
+  }
+}

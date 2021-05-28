@@ -1,17 +1,22 @@
-import styles from './Card.module.scss'
+import styles from './IconButton.module.scss'
 import cn from 'classnames'
+import Icon from '../IconCompo'
 
 export type Props = {
   className?: string
-  children?: React.ReactNode
-  // ↑HTMLタグ何でも入れられるよ
   style?: React.CSSProperties
+  type: IconType
+  onClick?: () => void
 }
 
-const Card: React.FC<Props> = ({ children, className, style }) => (
+export type IconType = 'facebook' | 'doubleUp' | 'github' | 'gmail' | 'twitter'
+
+const IconButton: React.FC<Props> = ({ className, style, type, onClick }) => (
   <div className={cn(styles.default, className)} style={style}>
-    {children}
+    <button className={styles.button} onClick={onClick}>
+      <Icon type={type} />
+    </button>
   </div>
 )
 
-export default Card
+export default IconButton

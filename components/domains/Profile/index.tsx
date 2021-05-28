@@ -1,5 +1,6 @@
 import styles from './Profile.module.scss'
 import cn from 'classnames'
+import IconButton from '../../bases/IconButton'
 
 export type Props = {
   className?: string
@@ -29,7 +30,12 @@ const Profile: React.FC<Props> = ({ className }) => (
         <br />
         コンペヤ -デザイナー・エンジニア
       </p>
-      <div className={styles.linkContainer}></div>
+      <div className={styles.linkContainer}>
+        <IconButton className={styles.icon} type="facebook" />
+        <IconButton className={styles.icon} type="twitter" />
+        <IconButton className={styles.icon} type="github" />
+        <IconButton className={styles.icon} type="gmail" />
+      </div>
     </div>
   </div>
 )
