@@ -1,0 +1,89 @@
+@media screen and (max-width: 600px) {
+  .default {
+    width: 100vw;
+    height: 100vh;
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      .title {
+        font-family: 'Josefin Sans';
+        font-size: x-large;
+        color: #fff;
+        white-space: nowrap;
+        margin-bottom: 80px;
+      }
+      .portButton {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: medium;
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        margin: 20px;
+      }
+      .blogButton {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: medium;
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        margin: 20px;
+      }
+    }
+    .back {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .default {
+    width: 100vw;
+    height: 100vh;
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+      margin: auto;
+      .title {
+        font-family: 'Josefin Sans';
+        font-size: xx-large;
+        color: #fff;
+        margin-bottom: 10vh;
+      }
+      .portButton {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: x-large;
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        margin: 10px;
+      }
+      .blogButton {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: x-large;
+        font-family: 'Josefin Sans';
+        font-weight: 300;
+        margin: 10px;
+      }
+    }
+    .back {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+}
