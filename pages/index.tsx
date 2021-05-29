@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { NextPage } from 'next'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 import React, { FC } from 'react'
@@ -7,8 +8,10 @@ import Top from '../components/domains/Top'
 import Catch from '../components/domains/Catch'
 import Profile from '../components/domains/Profile'
 import BackButton from '../components/domains/BackButton'
+import { useRouter } from 'next/router'
 
-export default function Home() {
+const Index: NextPage = () => {
+  const router = useRouter()
   return (
     <div className={styles.container}>
       <Head>
@@ -21,22 +24,22 @@ export default function Home() {
         <AppbarWhite className={styles.appbar} />
         <Top className={styles.top} />
         <Catch className={styles.catch} />
-        <Profile className={styles.profole} />
+        <Profile
+          className={styles.profole}
+          onSkillClick={() =>
+            router.push({
+              pathname: `/skillSheet`,
+            })
+          }
+        />
         <BackButton className={styles.backButton} />
       </main>
 
       {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+        <a></a>
       </footer> */}
     </div>
   )
 }
+
+export default Index

@@ -4,9 +4,10 @@ import IconButton from '../../bases/IconButton'
 
 export type Props = {
   className?: string
+  onSkillClick: () => void
 }
 
-const Profile: React.FC<Props> = ({ className }) => (
+const Profile: React.FC<Props> = ({ className, onSkillClick }) => (
   <div className={cn(styles.default, className)}>
     <div className={styles.container}>
       <p className={styles.name}>Ren Shimosawa</p>
@@ -20,7 +21,7 @@ const Profile: React.FC<Props> = ({ className }) => (
         <br />
         映像制作ディレクター
       </p>
-      <button className={styles.skillButton}>
+      <button className={styles.skillButton} onClick={onSkillClick}>
         <span>Skill Sheet</span>
       </button>
       <p className={styles.present}>
