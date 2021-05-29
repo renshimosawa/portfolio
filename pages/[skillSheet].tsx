@@ -1,9 +1,8 @@
 import styles from '../styles/skillSheet.module.scss'
 import React, { FC } from 'react'
-import { NextPage } from 'next'
 import AppbarGray from '../components/domains/AppbarGray'
 
-const skillSheet: NextPage = () => {
+const skillSheet: React.FC = () => {
   return (
     <div className={styles.default}>
       <AppbarGray />

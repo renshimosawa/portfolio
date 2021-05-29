@@ -6,15 +6,17 @@ export type Props = {
   className?: string
   style?: React.CSSProperties
   type: IconType
-  onClick?: () => void
+  url?: string
 }
 
 export type IconType = 'facebook' | 'doubleUp' | 'github' | 'gmail' | 'twitter'
 
-const IconButton: React.FC<Props> = ({ className, style, type, onClick }) => (
+const IconButton: React.FC<Props> = ({ className, style, type, url }) => (
   <div className={cn(styles.default, className)} style={style}>
-    <button className={styles.button} onClick={onClick}>
-      <Icon type={type} />
+    <button className={styles.button}>
+      <a href={url}>
+        <Icon type={type} />
+      </a>
     </button>
   </div>
 )

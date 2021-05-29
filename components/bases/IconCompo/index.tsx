@@ -10,6 +10,7 @@ import Twitter from './Icons/twitter'
 export type Props = {
   className?: string
   type: Type
+  url?: string
 }
 const svgMap = {
   facebook: Facebook,
@@ -21,11 +22,13 @@ const svgMap = {
 
 export type Type = keyof typeof svgMap //enum(列挙型=またはまたはまたは)
 
-const IconCompo: React.FC<Props> = ({ type, className }) => {
+const IconCompo: React.FC<Props> = ({ type, className, url }) => {
   const SvgComponent = svgMap[type]
   return (
     <div className={cn(styles.default, className)}>
-      <SvgComponent />
+      <a href={url}>
+        <SvgComponent />
+      </a>
     </div>
   )
 }

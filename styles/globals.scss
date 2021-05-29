@@ -17,3 +17,9 @@ a {
 * {
   box-sizing: border-box;
 }
+button :hover {
+  cursor: pointer;
+}
+a :hover {
+  cursor: pointer;
+}
