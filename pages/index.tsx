@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.main} id="top">
         <AppbarWhite className={styles.appbar} />
         <Top className={styles.top} />
         <Catch className={styles.catch} />
