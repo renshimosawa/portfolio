@@ -1,5 +1,6 @@
 import styles from './Tooltips.module.scss'
 import cn from 'classnames'
+import React from 'react'
 
 export type Props = {
   className?: string
@@ -7,6 +8,7 @@ export type Props = {
 }
 
 const Tooltips: React.FC<Props> = ({ className, label }) => {
+  React.useEffect(() => {})
   return (
     <div className={cn(styles.default, className)}>
       <p className="tooltip">{label}</p>
