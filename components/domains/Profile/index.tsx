@@ -1,35 +1,22 @@
 import styles from './Profile.module.scss'
 import cn from 'classnames'
 import IconButton from '../../bases/IconButton'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Link from 'next/link'
 import Tooltips from '../../bases/Tooltips'
-import { useRouter } from 'next/router'
 
 export type Props = {
   className?: string
+  onSkillClick?: () => void
 }
 
-const Profile: React.FC<Props> = ({ className }) => {
+const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
   const [isClick, setIsClick] = useState(false)
-  const router = useRouter()
-  useEffect(() => {
-    console.log('action')
-    return () => {
-      setIsClick(false)
-    }
-  }, [isClick])
-
-  // const counter = () => {
-  //   const [count, setCount] = useState(0)
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setCount((c) => c + 1)
-  //     }, 1000)
-  //     return () => clearInterval(interval)
-  //   }, [])
-  // }
+  const handleToolTip = () => {
+    setIsClick(true)
+    setTimeout(() => setIsClick(false), 2000)
+  }
 
   return (
     <div className={cn(styles.default, className)}>
@@ -45,7 +32,7 @@ const Profile: React.FC<Props> = ({ className }) => {
           <br />
           映像制作ディレクター
         </p>
-        <button className={styles.skillButton} onClick={() => router.push('/skill-sheet')}>
+        <button className={styles.skillButton} onClick={onSkillClick}>
           <span>Skill Sheet</span>
         </button>
         <p className={styles.present}>
@@ -73,11 +60,7 @@ const Profile: React.FC<Props> = ({ className }) => {
           </Link>
           <div>
             <CopyToClipboard text={'ren.shimosawa.cc@gmail.com'}>
-              <IconButton
-                className={styles.gmailIcon}
-                type="gmail"
-                onClick={() => setIsClick(true)}
-              />
+              <IconButton className={styles.gmailIcon} type="gmail" onClick={handleToolTip} />
             </CopyToClipboard>
           </div>
           {isClick && (

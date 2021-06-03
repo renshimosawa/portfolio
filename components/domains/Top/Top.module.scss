@@ -62,6 +62,7 @@
         margin-bottom: 10vh;
         white-space: nowrap;
       }
+
       .portButton {
         background: none;
         border: none;
@@ -70,6 +71,11 @@
         font-family: 'Josefin Sans';
         font-weight: 300;
         margin: 10px;
+        transition: ease 0.2s;
+      }
+      .portButton:hover {
+        text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+        transition: ease 0.2s;
       }
       .blogButton {
         background: none;
@@ -79,6 +85,11 @@
         font-family: 'Josefin Sans';
         font-weight: 300;
         margin: 10px;
+        transition: ease 0.2s;
+      }
+      .blogButton:hover {
+        text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+        transition: ease 0.2s;
       }
     }
     .back {

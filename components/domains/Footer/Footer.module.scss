@@ -1,0 +1,11 @@
+.footer {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  .right {
+    font-weight: 300;
+    font-size: small;
+    vertical-align: bottom;
+  }
+}

@@ -8,7 +8,6 @@ export type Props = {
 }
 
 const Tooltips: React.FC<Props> = ({ className, label }) => {
-  React.useEffect(() => {})
   return (
     <div className={cn(styles.default, className)}>
       <p className="tooltip">{label}</p>

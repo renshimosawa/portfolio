@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 2019",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "@storybook/cli": "^6.2.9",
     "@tailwindcss/postcss7-compat": "^2.1.2",
     "@zeit/next-sass": "^1.0.1",
@@ -18,6 +19,7 @@
     "node-sass": "^6.0.0",
     "postcss": "7",
     "react": "17.0.2",
+    "react-awesome-reveal": "^3.7.2",
     "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "17.0.2",
     "rxjs": "^7.1.0",

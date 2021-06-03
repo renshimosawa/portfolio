@@ -4,9 +4,13 @@
     height: 50px;
     display: flex;
     align-items: center;
-    .logo {
-      width: 250px;
-      margin-left: 2vw;
+    .button {
+      background: none;
+      border: none;
+      .logo {
+        width: 250px;
+        margin-left: 2vw;
+      }
     }
   }
 }
@@ -17,9 +21,13 @@
     height: 50px;
     display: flex;
     align-items: center;
-    .logo {
-      width: 250px;
-      margin-left: 2vw;
+    .button {
+      background: none;
+      border: none;
+      .logo {
+        width: 250px;
+        margin-left: 2vw;
+      }
     }
   }
 }

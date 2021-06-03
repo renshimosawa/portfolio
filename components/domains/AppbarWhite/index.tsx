@@ -6,15 +6,15 @@ import LogoWhite from '../../../public/logo_white.svg'
 
 export type Props = {
   className?: string
-  children?: React.ReactNode
+  onClick?: () => void
   // ↑HTMLタグ何でも入れられるよ
 }
 
-const AppbarWhite: React.FC<Props> = ({ children, className }) => (
+const AppbarWhite: React.FC<Props> = ({ onClick, className }) => (
   <div className={cn(styles.default, className)}>
-    <a href="/">
+    <button onClick={onClick} className={styles.button}>
       <LogoWhite className={styles.logo} />
-    </a>
+    </button>
   </div>
 )
 
