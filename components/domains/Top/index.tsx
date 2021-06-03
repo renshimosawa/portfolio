@@ -13,11 +13,11 @@ const Top: React.FC<Props> = ({ className, onPortClick, onBlogClick }) => (
     <div className={styles.container}>
       <p className={styles.title}>Make Aomori Emotional</p>
       <button className={styles.portButton} onClick={onPortClick}>
-        →Portfolio
+        <span>→Portfolio</span>
       </button>
       <br />
       <button className={styles.blogButton} onClick={onBlogClick}>
-        →Blog
+        <span>→Blog</span>
       </button>
     </div>
     <TopBack className={styles.back} />

@@ -1,6 +1,7 @@
 import styles from './AppbarWhite.module.scss'
 import cn from 'classnames'
 import LogoWhite from '../../../public/logo_white.svg'
+
 // import LogoWhite from './LogoWhite'
 
 export type Props = {
@@ -11,7 +12,9 @@ export type Props = {
 
 const AppbarWhite: React.FC<Props> = ({ children, className }) => (
   <div className={cn(styles.default, className)}>
-    <LogoWhite className={styles.logo} />
+    <a href="/">
+      <LogoWhite className={styles.logo} />
+    </a>
   </div>
 )
 

@@ -8,7 +8,7 @@ export type Props = {
 
 const BackButton: React.FC<Props> = ({ className }) => (
   <div className={cn(styles.default, className)}>
-    <IconButton className={styles.icon} type="doubleUp" />
+    <IconButton className={styles.icon} type="doubleUp" url="/" />
     <p className={styles.right}>build by Ren Shimosawa</p>
   </div>
 )
