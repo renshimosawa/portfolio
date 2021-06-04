@@ -18,6 +18,7 @@ const skillSheet: React.FC = () => {
             <h4>Skill Sheet</h4>
             <h5>Adobe</h5>
             <p>Photoshop</p>
+            <p>Illustrator</p>
             <p>Premiere Pro</p>
             <p>After Effects</p>
             <p>XD</p>
@@ -35,6 +36,9 @@ const skillSheet: React.FC = () => {
             <p>Git</p>
             <p>Lottie</p>
             <p>Flutter</p>
+            <p>AWS Amprify</p>
+            <p>Google Domains</p>
+            <p>Google Cloud Platform</p>
             {/* brank */}
             <h5>Others</h5>
             <p>Microsoft Office</p>
