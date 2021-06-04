@@ -1,21 +1,21 @@
 @media screen and (max-width: 600px) {
   .default {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+
     justify-content: center;
     .container {
       text-align: center;
       .title {
         font-family: 'Hiragino Kaku Gothic ProN';
-        font-size: xx-large;
+        font-size: x-large;
         font-weight: 400;
-        margin: 80px;
+        margin: 80px 0 40px 0;
         color: #525252;
       }
       .description {
+        display: inline-block;
         font-family: 'Hiragino Kaku Gothic ProN';
-        font-size: medium;
+        font-size: small;
         font-weight: 100;
         color: #525252;
       }
@@ -25,9 +25,6 @@
 
 @media screen and (min-width: 601px) {
   .default {
-    width: 100vw;
-    height: 50vh;
-    margin: 20% 0 20% 0;
     .container {
       height: 100%;
       text-align: center;

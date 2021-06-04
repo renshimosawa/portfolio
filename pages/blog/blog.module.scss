@@ -11,6 +11,20 @@
     .top {
       position: relative;
     }
+    .titleContainer {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      .title {
+        font-size: xx-large;
+      }
+    }
+    .items {
+      display: flex;
+      justify-content: center;
+      width: 95vw;
+      margin: 0 auto;
+    }
   }
 }
 @media screen and (min-width: 601px) {
