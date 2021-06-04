@@ -16,7 +16,7 @@ const HeadCompo: React.FC = () => {
       <meta property="og:description" content="下沢廉のポートフォリオです。Next.jsで作りました。" />
       <meta
         property="og:image"
-        content="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/1.91_1.png?alt=media&token=c97cd079-0c10-46db-a170-4d9869a23159"
+        content="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=fe348853-d2cd-4b08-8906-33eb47b3664f"
       />
 
       {/* <!-- Twitter --> */}
@@ -29,11 +29,11 @@ const HeadCompo: React.FC = () => {
       />
       <meta
         property="twitter:image"
-        content="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/1.91_1.png?alt=media&token=c97cd079-0c10-46db-a170-4d9869a23159"
+        content="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=fe348853-d2cd-4b08-8906-33eb47b3664f"
       />
-      <link rel="shortcut icon" href="\favicon_package_v0.16\favicon.ico" />
-      <link rel="apple-touch-icon" href="\favicon_package_v0.16\apple-touch-icon.png" />
-      <link rel="icon" type="image/png" href="\favicon_package_v0.16\android-chrome-256x256.png" />
+      <link rel="shortcut icon" href="favicon.png" />
+      <link rel="apple-touch-icon" href="favicon.png" />
+      <link rel="icon" type="image/png" href="favicon.png" />
     </Head>
   )
 }
