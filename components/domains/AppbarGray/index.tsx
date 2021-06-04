@@ -1,8 +1,5 @@
 import styles from './AppbarGray.module.scss'
 import cn from 'classnames'
-import LogoWhite from '../../../public/logo_gray.svg'
-
-// import LogoWhite from './LogoWhite'
 
 export type Props = {
   className?: string
@@ -13,7 +10,7 @@ export type Props = {
 const AppbarGray: React.FC<Props> = ({ onClick, className }) => (
   <div className={cn(styles.default, className)}>
     <button onClick={onClick} className={styles.button}>
-      <LogoWhite className={styles.logo} />
+      <img className={styles.logo} src="logo_gray.svg"></img>
     </button>
   </div>
 )

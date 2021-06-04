@@ -7,8 +7,7 @@ import HeadCompo from '../../components/domains/HeadCompo'
 import BackButton from '../../components/domains/BackButton'
 import { Fade } from 'react-awesome-reveal'
 import Footer from '../../components/domains/Footer'
-import { getBlogs } from '../../service/blogs'
-import Navigation from '../../components/domains/templates'
+
 import { NextPage } from 'next'
 
 const blog: NextPage = (props: any) => {
