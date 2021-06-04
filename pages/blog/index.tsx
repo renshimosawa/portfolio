@@ -28,6 +28,19 @@ const blog: NextPage = (props: any) => {
         <div className={styles.titleContainer}>
           <p className={styles.title}>記事</p>
         </div>
+        <div className={styles.columnContainer}>
+          <p className={styles.cms}>BlogはMicro CMSでやろうとしてるところ</p>
+
+          <p className={styles.ques}>
+            あと、グラデーションの背景をSvgで埋めたいんですけど、いい方法ありますか？
+            <br />
+            imgタグのsrc内にいれて表示させると、縦横幅のレスポンシブが効かないし、Svgコンポネントとして入れるとパスにエラーを起こします。
+            <br />
+            どなたかいい情報お持ちでしたら教えてください。
+            <br />
+            ちなみにnext.jsで作ってます。
+          </p>
+        </div>
       </Fade>
       <Fade>
         <BackButton onBackClick={() => router.push('#top')} />

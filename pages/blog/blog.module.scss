@@ -48,11 +48,18 @@
         font-size: xx-large;
       }
     }
-    .items {
-      display: flex;
+    .columnContainer {
+      display: inline-block;
+
       justify-content: center;
-      width: 95vw;
+
       margin: 0 auto;
+      .cms {
+        margin: 5%;
+      }
+      .ques {
+        margin: 5%;
+      }
     }
   }
 }
