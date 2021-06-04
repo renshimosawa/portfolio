@@ -7,7 +7,7 @@ export type Props = {
 
 const TopBack: React.FC<Props> = ({ className }) => (
   <div className={cn(styles.default, className)}>
-    <img src="backImg.png" className={styles.background}></img>
+    <img src="backImgsmall0.5.jpg" className={styles.background}></img>
   </div>
 )
 
