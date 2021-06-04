@@ -63,10 +63,8 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <IconButton className={styles.gmailIcon} type="gmail" onClick={handleToolTip} />
             </CopyToClipboard>
           </div>
-          {isClick && (
-            <Tooltips label="メールアドレスをコピーしました" className={styles.tooltips} />
-          )}
         </div>
+        {isClick && <Tooltips label="メールアドレスをコピーしました" className={styles.tooltips} />}
       </div>
     </div>
   )
