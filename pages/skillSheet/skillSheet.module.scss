@@ -1,0 +1,50 @@
+@media screen and (max-width: 600px) {
+  .default {
+    width: 100vw;
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .textContainer {
+        color: #525252;
+        h4 {
+          font-size: x-large;
+        }
+        h5 {
+          font-size: large;
+          margin: 40px 0 18px 10px;
+        }
+        p {
+          margin: 5px 0 5px 20px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 601px) {
+  .default {
+    width: 100vw;
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 5%;
+      margin-bottom: 10%;
+      .textContainer {
+        color: #525252;
+        h4 {
+          font-size: x-large;
+        }
+        h5 {
+          font-size: large;
+          margin: 40px 0 18px 10px;
+        }
+        p {
+          margin: 5px 0 5px 20px;
+        }
+      }
+    }
+  }
+}
