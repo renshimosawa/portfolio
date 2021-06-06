@@ -1,4 +1,3 @@
-// 静的生成のためのパスを指定します
 export const getStaticPaths = async () => {
   const key = {
     headers: { 'X-API-KEY': process.env.API_KEY },
