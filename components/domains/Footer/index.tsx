@@ -3,7 +3,7 @@ import styles from './Footer.module.scss'
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <p className={styles.right}>build by Ren Shimosawa</p>
+      <p className={styles.right}>built by Ren Shimosawa</p>
     </footer>
   )
 }
