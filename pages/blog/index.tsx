@@ -1,4 +1,4 @@
-import styles from './blog.module.scss'
+import styles from './Blog.module.scss'
 import React, { FC } from 'react'
 import AppbarWhite from '../../components/domains/AppbarWhite'
 import Top from '../../components/domains/Top'
@@ -7,12 +7,26 @@ import HeadCompo from '../../components/domains/HeadCompo'
 import BackButton from '../../components/domains/BackButton'
 import { Fade } from 'react-awesome-reveal'
 import Footer from '../../components/domains/Footer'
+import Link from 'next/link'
+import Card from '../../components/bases/Card'
 
-import { NextPage } from 'next'
+export const getStaticProps = async () => {
+  const key = {
+    headers: { 'X-API-KEY': process.env.API_KEY },
+  }
+  const data = await fetch('https://emotional-aomori.microcms.io/api/v1/blog', key)
+    .then((res) => res.json())
+    .catch(() => null)
+  return {
+    props: {
+      blog: data.contents,
+    },
+  }
+}
 
-const blog: NextPage = (props: any) => {
+export default function Blog({ blog }) {
   const router = useRouter()
-  // const { contents } = props;
+
   return (
     <div className={styles.default}>
       <HeadCompo />
@@ -28,18 +42,22 @@ const blog: NextPage = (props: any) => {
         <div className={styles.titleContainer}>
           <p className={styles.title}>記事</p>
         </div>
-        <div className={styles.columnContainer}>
-          <p className={styles.cms}>BlogはMicro CMSでやろうとしてるところ</p>
-
-          <p className={styles.ques}>
-            あと、グラデーションの背景をSvgで埋めたいんですけど、いい方法ありますか？
-            <br />
-            imgタグのsrc内にいれて表示させると、縦横幅のレスポンシブが効かないし、Svgコンポネントとして入れるとパスにエラーを起こします。
-            <br />
-            どなたかいい情報お持ちでしたら教えてください。
-            <br />
-            ちなみにnext.jsで作ってます。
-          </p>
+        <div className={styles.itemsContainer}>
+          {blog.map((blog) => (
+            <Card key={blog.id} className={styles.item} style={{ borderRadius: 0 }}>
+              <Link href={`blog/${blog.id}`}>
+                <div>
+                  <div className={styles.imgContainer}>
+                    <img src={blog.thumbnail.url}></img>
+                  </div>
+                  <h4 style={{ marginTop: 10, marginBottom: 10 }}>{blog.title}</h4>
+                  <p datatype="yyyy-mm-dd" style={{ margin: 3, color: '#575757' }}>
+                    {blog.date}
+                  </p>
+                </div>
+              </Link>
+            </Card>
+          ))}
         </div>
       </Fade>
       <Fade>
@@ -49,5 +67,3 @@ const blog: NextPage = (props: any) => {
     </div>
   )
 }
-
-export default blog

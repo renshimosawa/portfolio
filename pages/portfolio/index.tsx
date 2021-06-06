@@ -1,4 +1,4 @@
-import styles from './portfolio.module.scss'
+import styles from './Portfolio.module.scss'
 import React, { FC } from 'react'
 import AppbarWhite from '../../components/domains/AppbarWhite'
 import Top from '../../components/domains/Top'
