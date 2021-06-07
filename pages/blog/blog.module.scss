@@ -23,11 +23,11 @@
       width: 95vw;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       margin: 0 auto;
       align-items: center;
       .item {
         display: inline-block;
-        width: 350px;
         height: auto;
         margin: 5%;
         cursor: pointer;
@@ -67,6 +67,7 @@
     .itemsContainer {
       width: 95vw;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       margin: 0 auto;
       align-items: center;
