@@ -18,8 +18,3 @@ module.exports = {
     X_API_KEY: process.env.X_API_KEY,
   },
 }
-module.exports = {
-  images: {
-    loader: 'imgix',
-  },
-}
