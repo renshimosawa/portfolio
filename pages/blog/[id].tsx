@@ -1,3 +1,8 @@
+import styles from './id.module.scss'
+import AppbarGray from '../../components/domains/AppbarGray'
+import HeadCompo from '../../components/domains/HeadCompo'
+import Moment from 'react-moment'
+
 export const getStaticPaths = async () => {
   const key = {
     headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
@@ -27,15 +32,26 @@ export const getStaticProps = async (context) => {
 
 export default function BlogId({ blog }) {
   return (
-    <main>
-      <img src={blog.thumbnail.url}></img>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `${blog.main}`,
-        }}
-      />
-    </main>
+    <div className={styles.default}>
+      <HeadCompo />
+      <AppbarGray />
+      <div className={styles.container}>
+        <div className={styles.contents}>
+          <h1 className={styles.title}>{blog.title}</h1>
+          <Moment format="YYYY/MM/DD" className={styles.date}>
+            {blog.publishedAt}
+          </Moment>
+          <div className={styles.imgContainer}>
+            <img src={blog.thumbnail.url} className={styles.thumbnail}></img>
+          </div>
+          <div
+            className={styles.main}
+            dangerouslySetInnerHTML={{
+              __html: `${blog.main}`,
+            }}
+          />
+        </div>
+      </div>
+    </div>
   )
 }
