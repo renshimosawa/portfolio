@@ -9,6 +9,7 @@ import { Fade } from 'react-awesome-reveal'
 import Footer from '../../components/domains/Footer'
 import Link from 'next/link'
 import Card from '../../components/bases/Card'
+import Moment from 'react-moment'
 
 export const getStaticProps = async () => {
   const key = {
@@ -51,9 +52,9 @@ export default function Blog({ blog }) {
                     <img src={blog.thumbnail.url}></img>
                   </div>
                   <h4 style={{ marginTop: 10, marginBottom: 10 }}>{blog.title}</h4>
-                  <p datatype="yyyy-mm-dd" style={{ margin: 3, color: '#575757' }}>
+                  <Moment format="YYYY/MM/DD" style={{ margin: 5, color: '#a1a1a1;' }}>
                     {blog.date}
-                  </p>
+                  </Moment>
                 </div>
               </Link>
             </Card>
