@@ -10,15 +10,20 @@ import BackButton from '../../components/domains/BackButton'
 import { Fade } from 'react-awesome-reveal'
 import Footer from '../../components/domains/Footer'
 import Link from 'next/link'
+import { animateScroll as scroll } from 'react-scroll'
 
 const Portfolio: React.FC = () => {
   const router = useRouter()
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
   return (
     <div className={styles.default}>
       <HeadCompo />
       <AppbarWhite className={styles.appbar} onClick={() => router.push('/')} />
       <Top
         className={styles.top}
+        title="Portfolio"
         FirstLabel="←Home"
         SecondLabel="→Blog"
         onFirstClick={() => router.push('/')}
@@ -82,7 +87,7 @@ const Portfolio: React.FC = () => {
         </div>
       </Fade>
       <Fade>
-        <BackButton onBackClick={() => router.push('#top')} />
+        <BackButton onBackClick={scrollToTop} />
         <Footer />
       </Fade>
     </div>

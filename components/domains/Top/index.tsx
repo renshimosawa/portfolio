@@ -5,6 +5,7 @@ import { Fade } from 'react-awesome-reveal'
 
 export type Props = {
   className?: string
+  title: string
   onFirstClick?: () => void
   FirstLabel?: string
   onSecondClick?: () => void
@@ -13,6 +14,7 @@ export type Props = {
 
 const Top: React.FC<Props> = ({
   className,
+  title,
   onFirstClick,
   FirstLabel,
   onSecondClick,
@@ -21,7 +23,7 @@ const Top: React.FC<Props> = ({
   <div className={cn(styles.default, className)}>
     <div className={styles.container}>
       <Fade>
-        <p className={styles.title}>Make Aomori Emotional</p>
+        <p className={styles.title}>{title}</p>
         <button className={styles.portButton} onClick={onFirstClick}>
           <span>{FirstLabel}</span>
         </button>
