@@ -9,16 +9,21 @@ import { Fade } from 'react-awesome-reveal'
 import { useRouter } from 'next/router'
 import HeadCompo from '../components/domains/HeadCompo'
 import Footer from '../components/domains/Footer'
+import { animateScroll as scroll } from 'react-scroll'
 
 const Home: React.FC = () => {
   const router = useRouter()
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
   return (
     <div className={styles.container}>
       <HeadCompo />
-      <main className={styles.main} id="top">
+      <main className={styles.main}>
         <AppbarWhite className={styles.appbar} onClick={() => router.push('/')} />
         <Top
           className={styles.top}
+          title="Make Aomori Emotional"
           FirstLabel="→Portfolio"
           SecondLabel="→Blog"
           onFirstClick={() => router.push('/portfolio')}
@@ -31,7 +36,7 @@ const Home: React.FC = () => {
           <Profile className={styles.profole} onSkillClick={() => router.push('/skillSheet')} />
         </Fade>
         <Fade>
-          <BackButton className={styles.backButton} onBackClick={() => router.push('#top')} />
+          <BackButton className={styles.backButton} onBackClick={scrollToTop} />
         </Fade>
       </main>
       <Fade>

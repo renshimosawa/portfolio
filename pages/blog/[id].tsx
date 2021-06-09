@@ -30,7 +30,7 @@ export const getStaticProps = async (context) => {
   }
 }
 
-export default function BlogId({ blog }) {
+const BlogId = ({ blog }) => {
   return (
     <div className={styles.default}>
       <HeadCompo />
@@ -55,3 +55,4 @@ export default function BlogId({ blog }) {
     </div>
   )
 }
+export default BlogId

@@ -3,11 +3,16 @@ import React, { FC } from 'react'
 import AppbarGray from '../../components/domains/AppbarGray'
 import HeadCompo from '../../components/domains/HeadCompo'
 import Footer from '../../components/domains/Footer'
+import BackButton from '../../components/domains/BackButton'
 import { useRouter } from 'next/router'
 import { Fade } from 'react-awesome-reveal'
+import { animateScroll as scroll } from 'react-scroll'
 
 const skillSheet: React.FC = () => {
   const router = useRouter()
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
   return (
     <div className={styles.default}>
       <HeadCompo />
@@ -44,6 +49,11 @@ const skillSheet: React.FC = () => {
             <p>Microsoft Office</p>
           </div>
         </div>
+      </Fade>
+      <Fade>
+        <BackButton className={styles.backButton} onBackClick={scrollToTop} />
+      </Fade>
+      <Fade>
         <Footer />
       </Fade>
     </div>

@@ -10,6 +10,7 @@ import Footer from '../../components/domains/Footer'
 import Link from 'next/link'
 import Card from '../../components/bases/Card'
 import Moment from 'react-moment'
+import { animateScroll as scroll } from 'react-scroll'
 
 export const getStaticProps = async () => {
   const key = {
@@ -25,8 +26,11 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function Blog({ blog }) {
+const Blog = ({ blog }) => {
   const router = useRouter()
+  const scrollToTop = () => {
+    scroll.scrollToTop()
+  }
 
   return (
     <div className={styles.default}>
@@ -34,6 +38,7 @@ export default function Blog({ blog }) {
       <AppbarWhite className={styles.appbar} onClick={() => router.push('/')} />
       <Top
         className={styles.top}
+        title="Blog"
         FirstLabel="→Portfolio"
         SecondLabel="←Home"
         onFirstClick={() => router.push('portfolio')}
@@ -62,9 +67,11 @@ export default function Blog({ blog }) {
         </div>
       </Fade>
       <Fade>
-        <BackButton onBackClick={() => router.push('#top')} />
+        <BackButton onBackClick={scrollToTop} />
         <Footer />
       </Fade>
     </div>
   )
 }
+
+export default Blog
