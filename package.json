@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 2019",
-    "build": "next build",
+    "build": "next build next export",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
