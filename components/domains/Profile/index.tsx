@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Link from 'next/link'
 import Tooltips from '../../bases/Tooltips'
+import * as gtag from '../../../src/lib/gtag'
 
 export type Props = {
   className?: string
@@ -18,6 +19,29 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
     setTimeout(() => setIsClick(false), 2000)
   }
 
+  const ClickFacebook = () => {
+    gtag.event({
+      action: 'click_facebook',
+      category: 'link_button',
+      label: 'facebook',
+    })
+  }
+
+  const ClickTwitter = () => {
+    gtag.event({
+      action: 'click_twitter',
+      category: 'link_button',
+      label: 'twitter',
+    })
+  }
+
+  const ClickGithub = () => {
+    gtag.event({
+      action: 'click_github',
+      category: 'link_button',
+      label: 'github',
+    })
+  }
   return (
     <div className={cn(styles.default, className)}>
       <div className={styles.container}>
@@ -44,17 +68,17 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
         </p>
         <div className={styles.linkContainer}>
           <Link href="https://www.facebook.com/ren.shimosawa">
-            <a target="_blank">
+            <a target="_blank" onClick={ClickFacebook}>
               <IconButton className={styles.icon} type="facebook" />
             </a>
           </Link>
           <Link href="https://twitter.com/ren_shimosawa">
-            <a target="_blank">
+            <a target="_blank" onClick={ClickTwitter}>
               <IconButton className={styles.icon} type="twitter" />
             </a>
           </Link>
           <Link href="https://github.com/renshimosawa">
-            <a target="_blank">
+            <a target="_blank" onClick={ClickGithub}>
               <IconButton className={styles.icon} type="github" />
             </a>
           </Link>

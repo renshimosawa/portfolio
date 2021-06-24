@@ -16,6 +16,7 @@ const Home: React.FC = () => {
   const scrollToTop = () => {
     scroll.scrollToTop()
   }
+
   return (
     <div className={styles.container}>
       <HeadCompo />
