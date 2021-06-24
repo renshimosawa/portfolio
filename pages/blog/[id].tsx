@@ -41,9 +41,11 @@ const BlogId = ({ blog }) => {
           <Moment format="YYYY/MM/DD" className={styles.date}>
             {blog.publishedAt}
           </Moment>
-          <div className={styles.imgContainer}>
-            <img src={blog.thumbnail.url} className={styles.thumbnail}></img>
-          </div>
+          {blog.thumbnail.url && (
+            <div className={styles.imgContainer}>
+              <img src={blog.thumbnail.url} className={styles.thumbnail}></img>
+            </div>
+          )}
           <div
             className={styles.main}
             dangerouslySetInnerHTML={{
