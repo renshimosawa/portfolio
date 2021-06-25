@@ -2,6 +2,7 @@ import styles from './id.module.scss'
 import AppbarGray from '../../components/domains/AppbarGray'
 import HeadCompo from '../../components/domains/HeadCompo'
 import Moment from 'react-moment'
+import { useRouter } from 'next/router'
 
 export const getStaticPaths = async () => {
   const key = {
@@ -31,10 +32,11 @@ export const getStaticProps = async (context) => {
 }
 
 const BlogId = ({ blog }) => {
+  const router = useRouter()
   return (
     <div className={styles.default}>
       <HeadCompo />
-      <AppbarGray />
+      <AppbarGray onClick={() => router.push('/')} />
       <div className={styles.container}>
         <div className={styles.contents}>
           <h1 className={styles.title}>{blog.title}</h1>
