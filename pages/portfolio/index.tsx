@@ -34,9 +34,29 @@ const Portfolio: React.FC = () => {
           <p className={styles.title}>作品</p>
         </div>
         <div className={styles.items}>
+          <Link href="https://compeya.com/lp">
+            <a target="_blank">
+              <ImgCard
+                style={{ margin: 15 }}
+                labelStyle={{ color: '#575757' }}
+                label="【デザイン&コーディング】it feels it HP"
+                imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/ogp.jpg?alt=media&token=fff0561e-3cd7-45e1-9a3c-8be8d33cdf8d"
+              />
+            </a>
+          </Link>
+          <Link href="https://www.quantum-box.com/">
+            <a target="_blank">
+              <ImgCard
+                style={{ margin: 15 }}
+                labelStyle={{ color: '#575757' }}
+                label="【デザイン&コーディング】Quantum Box HP"
+                imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=893d7d0f-2bbc-4446-964b-79cec4ed3e4a"
+              />
+            </a>
+          </Link>
           <VideoCard
             style={{ margin: 15 }}
-            labelStyle={{ color: '#fff' }}
+            labelStyle={{ color: '#575757' }}
             label="えんぶりフォトコン2020特賞"
             url="https://www.youtube.com/embed/Xw_Xc50jY1E"
           />
@@ -62,12 +82,12 @@ const Portfolio: React.FC = () => {
               />
             </a>
           </Link>
-          <VideoCard
+          {/* <VideoCard
             style={{ margin: 15 }}
             labelStyle={{ color: '#575757' }}
             label="Youtubeプレミア公開　模写"
             url="https://www.youtube.com/embed/FVDlTiEDpFY"
-          />
+          /> */}
           <Link href="https://prtimes.jp/main/html/rd/p/000000001.000069392.html">
             <a target="_blank">
               <ImgCard
