@@ -1,7 +1,7 @@
 import styles from './Profile.module.scss'
 import cn from 'classnames'
 import IconButton from '../../bases/IconButton'
-import React, { useState } from 'react'
+import React, { CSSProperties, useCallback, useMemo, useState } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Link from 'next/link'
 import Tooltips from '../../bases/Tooltips'
@@ -12,13 +12,43 @@ export type Props = {
   onSkillClick?: () => void
 }
 
-const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
-  const [isClick, setIsClick] = useState(false)
-  const handleToolTip = () => {
-    setIsClick(true)
-    setTimeout(() => setIsClick(false), 2000)
-  }
+const useFadeInOut = (durationSec: number) => {
+  const [display, setDisplay] = useState(false)
 
+  const handleClose = useCallback(() => {
+    setDisplay(false)
+  }, [setDisplay])
+
+  const handleOpen = useCallback(() => {
+    setDisplay(true)
+  }, [setDisplay])
+
+  const toggleDisplay = useCallback(() => {
+    setDisplay(true)
+    setTimeout(() => setDisplay(false), 2000)
+  }, [setDisplay])
+
+  const boxStyle = useMemo((): CSSProperties => {
+    if (display) {
+      return {
+        opacity: 1,
+        visibility: 'visible',
+        transition: `opacity ${durationSec}s`,
+      }
+    }
+
+    return {
+      opacity: 0,
+      visibility: 'hidden',
+      transition: `opacity ${durationSec}s, visibility 0s ${durationSec}s`,
+    }
+  }, [durationSec, display])
+
+  return { display, handleOpen, handleClose, toggleDisplay, boxStyle }
+}
+
+const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
+  const { toggleDisplay, boxStyle } = useFadeInOut(0.2)
   const ClickFacebook = () => {
     gtag.event({
       action: 'click_facebook',
@@ -84,11 +114,15 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
           </Link>
           <div>
             <CopyToClipboard text={'ren.shimosawa.cc@gmail.com'}>
-              <IconButton className={styles.gmailIcon} type="gmail" onClick={handleToolTip} />
+              <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
             </CopyToClipboard>
           </div>
         </div>
-        {isClick && <Tooltips label="メールアドレスをコピーしました" className={styles.tooltips} />}
+        <Tooltips
+          label="メールアドレスをコピーしました"
+          className={styles.tooltips}
+          style={boxStyle}
+        />
       </div>
     </div>
   )

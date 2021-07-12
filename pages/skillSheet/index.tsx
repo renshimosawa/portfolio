@@ -31,22 +31,28 @@ const skillSheet: React.FC = () => {
             {/* brank */}
             <h5>Web Service</h5>
             <p>Figma</p>
-            <p>Google Sheets / Docs / Slides</p>
+            <p>LINE Business</p>
+            <h5>Google</h5>
+            <p>Sheets / Docs / Slides</p>
+            <p>Cloud Platform</p>
+            <p>Domains</p>
+            <p>Map Business</p>
             {/* brank */}
             <h5>Engneering</h5>
             <p>HTML/CSS</p>
             <p>JavaScript</p>
+            <p>TypeScript</p>
             <p>React.js</p>
             <p>Next.js</p>
             <p>Git</p>
             <p>Lottie</p>
+            <p>Micro CMS</p>
             <p>Flutter</p>
-            <p>AWS Amprify</p>
-            <p>Google Domains</p>
-            <p>Google Cloud Platform</p>
+            <p>AWS</p>
             {/* brank */}
             <h5>Others</h5>
             <p>Microsoft Office</p>
+            <p>ビジネス実務法務検定 2級</p>
           </div>
         </div>
       </Fade>
