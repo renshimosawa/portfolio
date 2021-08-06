@@ -40,7 +40,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const id = context.params.id
   const key = {
-    headers: { 'X-API-KEY': process.env.API_KEY },
+    headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY  },
   }
   const data:Blog = await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
     .then((res) => res.json())
