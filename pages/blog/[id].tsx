@@ -3,6 +3,27 @@ import AppbarGray from '../../components/domains/AppbarGray'
 import HeadCompo from '../../components/domains/HeadCompo'
 import Moment from 'react-moment'
 import { useRouter } from 'next/router'
+import { InferGetStaticPropsType, NextPage } from 'next'
+
+type Props = InferGetStaticPropsType<typeof getStaticProps>
+
+export interface Blog {
+  id: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: any
+  revisedAt: string
+  title: string
+  date: string
+  thumbnail?: thumbnailTag
+  main: string
+}
+
+export interface thumbnailTag {
+  url: string
+  width: number
+  height: number
+}
 
 export const getStaticPaths = async () => {
   const key = {
@@ -21,7 +42,7 @@ export const getStaticProps = async (context) => {
   const key = {
     headers: { 'X-API-KEY': process.env.API_KEY },
   }
-  const data = await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
+  const data:Blog = await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
     .then((res) => res.json())
     .catch(() => null)
   return {
@@ -31,7 +52,7 @@ export const getStaticProps = async (context) => {
   }
 }
 
-const BlogId = ({ blog }) => {
+const BlogId:NextPage<Props> = ({ blog }) => {
   const router = useRouter()
   return (
     <div className={styles.default}>
