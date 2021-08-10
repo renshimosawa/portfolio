@@ -34,7 +34,7 @@ const Portfolio: React.FC = () => {
           <p className={styles.title}>作品</p>
         </div>
         <div className={styles.items}>
-          <Link href="https://compeya.com/lp">
+          <Link href="https://www.it-feels-it.com/">
             <a target="_blank">
               <ImgCard
                 style={{ margin: 15 }}
