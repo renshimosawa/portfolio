@@ -3,7 +3,7 @@ import AppbarGray from '../../components/domains/AppbarGray'
 import HeadCompo from '../../components/domains/HeadCompo'
 import Moment from 'react-moment'
 import { useRouter } from 'next/router'
-import { InferGetStaticPropsType, NextPage } from 'next'
+import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -25,30 +25,42 @@ export interface thumbnailTag {
   height: number
 }
 
+export interface microCmsResponse<T> {
+  contents: Array<T>
+}
+
 export const getStaticPaths = async () => {
   const key = {
     headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
   }
-  const data = await fetch('https://emotional-aomori.microcms.io/api/v1/blog', key)
-    .then((res) => res.json())
-    .catch(() => null)
-  const paths = data.contents.map((content) => `/blog/${content.id}`)
-  return { paths, fallback: false }
+  try{
+    const data:microCmsResponse<Blog> = await (
+      await fetch('https://emotional-aomori.microcms.io/api/v1/blog', key)
+    ).json()
+    const paths = data.contents.map((content) => `/blog/${content.id}`)
+    return { paths, fallback: false }
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
-  const id = context.params.id
+export const getStaticProps = async ({params}: GetStaticPropsContext) => {
+  const id =  params?.id ?? ''
   const key = {
-    headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY  },
+    headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY ?? '' },
   }
-  const data:Blog = await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
-    .then((res) => res.json())
-    .catch(() => null)
-  return {
-    props: {
-      blog: data,
-    },
+  try{
+    const data:Blog = await (
+      await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
+      ).json()
+      return {
+        props: {
+          blog: data,
+        },
+      }
+  } catch(error) {
+    console.error(error)
   }
 }
 
