@@ -61,7 +61,6 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
     console.error(error)
   }
 }
-
 const BlogId:NextPage<Props> = ({ blog }) => {
   const router = useRouter()
   const baseUrl = 'https://www.emotional-aomori.com/blog';
