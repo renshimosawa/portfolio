@@ -1,9 +1,9 @@
 import styles from './id.module.scss'
 import AppbarGray from '../../components/domains/AppbarGray'
-import HeadCompo from '../../components/domains/HeadCompo'
 import Moment from 'react-moment'
 import { useRouter } from 'next/router'
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
+import Head from 'next/head'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -29,10 +29,11 @@ export interface microCmsResponse<T> {
   contents: Array<T>
 }
 
+const key = {
+  headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
+}
+
 export const getStaticPaths = async () => {
-  const key = {
-    headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
-  }
   try{
     const data:microCmsResponse<Blog> = await (
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog', key)
@@ -44,19 +45,20 @@ export const getStaticPaths = async () => {
   }
 }
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async ({params}: GetStaticPropsContext) => {
   const id =  params?.id ?? ''
-  const key = {
-    headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY ?? '' },
-  }
   try{
     const data:Blog = await (
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
       ).json()
+    const baseUrl = {
+      production: "https://www.emotional-aomori.com/blog",
+      development: "http://localhost:2019",
+    }
       return {
         props: {
           blog: data,
+          ogpImageUrl: `${baseUrl}/api/ogp?title=${data.title}`,
         },
       }
   } catch(error) {
@@ -64,11 +66,28 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
   }
 }
 
-const BlogId:NextPage<Props> = ({ blog }) => {
+const BlogId:NextPage<Props> = ({ blog, ogpImageUrl }) => {
   const router = useRouter()
+  const baseUrl = process.env.NEXT_PUBLIC_API_KEY ?? '';
+  const Id = router.query.id
   return (
     <div className={styles.default}>
-      <HeadCompo />
+      <Head>
+        <title>{blog.title}</title>
+        <link rel="icon" href="/favicon.png" />
+        <meta
+          property="og:image"
+          content={ogpImageUrl}
+        />
+        <meta
+          property="twitter:card"
+          content={ogpImageUrl}
+        />
+        <meta
+          property="twitter:image"
+          content={ogpImageUrl}
+        />
+      </Head>
       <AppbarGray onClick={() => router.push('/')} />
       <div className={styles.container}>
         <div className={styles.contents}>

@@ -21,6 +21,6 @@
     "pages/blog/[id].tsx",
     "pages/_document.jsx",
     "src/lib/gtag.ts"
-  ],
+, "pages/api/ogp.ts"  ],
   "exclude": ["node_modules"]
 }
