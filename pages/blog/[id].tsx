@@ -4,6 +4,7 @@ import Moment from 'react-moment'
 import { useRouter } from 'next/router'
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
+import createOgp from '../../utils/server/ogpUtils'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -32,7 +33,6 @@ export interface microCmsResponse<T> {
 const key = {
   headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
 }
-
 export const getStaticPaths = async () => {
   try{
     const data:microCmsResponse<Blog> = await (
@@ -51,14 +51,10 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
     const data:Blog = await (
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
       ).json()
-    const baseUrl = {
-      production: "https://www.emotional-aomori.com/blog",
-      development: "http://localhost:2019",
-    }
+      void createOgp(data.title)
       return {
         props: {
           blog: data,
-          ogpImageUrl: `${baseUrl}/api/ogp?title=${data.title}`,
         },
       }
   } catch(error) {
@@ -66,26 +62,29 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
   }
 }
 
-const BlogId:NextPage<Props> = ({ blog, ogpImageUrl }) => {
+const BlogId:NextPage<Props> = ({ blog }) => {
   const router = useRouter()
-  const baseUrl = process.env.NEXT_PUBLIC_API_KEY ?? '';
+  const baseUrl = 'https://www.emotional-aomori.com/blog';
   const Id = router.query.id
+  const Title = blog.title
   return (
     <div className={styles.default}>
       <Head>
-        <title>{blog.title}</title>
+        <title>Emotional Aomori + {Title}</title>
         <link rel="icon" href="/favicon.png" />
         <meta
           property="og:image"
-          content={ogpImageUrl}
+          key="ogImage"
+          content={`${baseUrl}/ogp/${Id}.png`}
         />
         <meta
           property="twitter:card"
-          content={ogpImageUrl}
-        />
+          key="twitterCard"
+          content="summary_large_image" />
         <meta
           property="twitter:image"
-          content={ogpImageUrl}
+          key="twitterImage"
+          content={`${baseUrl}/ogp/${Id}.png`}
         />
       </Head>
       <AppbarGray onClick={() => router.push('/')} />
