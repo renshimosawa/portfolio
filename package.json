@@ -7,11 +7,7 @@
     "build": "next build && next export",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook",
-    "now-build": "cp canvas_lib64/*so.1 node_modules/canvas/build/Release/ && yarn build"
-  },
-  "resolutions": {
-    "node-canvas-with-twemoji/canvas": "2.6.1"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
@@ -21,12 +17,14 @@
     "autoprefixer": "9",
     "axios": "^0.21.1",
     "canvas": "^2.8.0",
+    "chrome-aws-lambda": "^10.1.0",
     "dayjs": "^1.10.5",
     "moment": "^2.29.1",
     "next": "10.2.0",
     "nookies": "^2.5.2",
     "playwright-aws-lambda": "^0.7.0",
     "postcss": "7",
+    "puppeteer-core": "^10.2.0",
     "react": "17.0.2",
     "react-awesome-reveal": "^3.7.2",
     "react-copy-to-clipboard": "^5.0.3",
