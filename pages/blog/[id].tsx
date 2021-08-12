@@ -4,6 +4,7 @@ import Moment from 'react-moment'
 import { useRouter } from 'next/router'
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
+import createOgp from '../../utils/server/ogpUtils'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -51,38 +52,43 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
       ).json()
       const title = data.title
+      const Id = data.id
       const baseUrl = {
         production: "https://www.emotional-aomori.com/",
         development: "http://localhost:2019",
       }[process.env.NODE_ENV];
+      void createOgp(title,Id);
       return {
         props: {
           blog: data,
           title,
-          ogImageUrl: `${baseUrl}/api/ogp?title=${title}`,
+          ogImageUrl: `${baseUrl}/api/ogp?title=${id}`,
         },
       }
   } catch(error) {
     console.error(error)
   }
 }
-const BlogId:NextPage<Props> = ({ blog, title,ogImageUrl }) => {
+const BlogId:NextPage<Props> = ({ blog, title }) => {
   const router = useRouter()
+  const BaseUrl = "https://www.emotional-aomori.com/"
+  const { Id } = router.query; 
   return (
     <div className={styles.default}>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.png" />
+        {/* <meta property="og:title" content={`${BaseUrl}/ogp/${Id}.png`} /> */}
         <meta
           property="og:image"
-          content={ogImageUrl}
+          content={`${BaseUrl}/ogp/${Id}.png`} 
         />
         <meta
           property="twitter:card"
           content="summary_large_image" />
         <meta
           property="twitter:image"
-          content={ogImageUrl}
+          content={`${BaseUrl}/ogp/${Id}.png`} 
         />
       </Head>
       <AppbarGray onClick={() => router.push('/')} />
