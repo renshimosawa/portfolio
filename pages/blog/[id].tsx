@@ -32,7 +32,6 @@ export interface microCmsResponse<T> {
 const key = {
   headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
 }
-
 export const getStaticPaths = async () => {
   try{
     const data:microCmsResponse<Blog> = await (
@@ -51,41 +50,39 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
     const data:Blog = await (
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
       ).json()
-    const baseUrl = {
-      production: "https://www.emotional-aomori.com/blog",
-      development: "http://localhost:2019",
-    }
+      const title = data.title
+      const baseUrl = {
+        production: "https://www.emotional-aomori.com/",
+        development: "http://localhost:2019",
+      }[process.env.NODE_ENV];
       return {
         props: {
           blog: data,
-          ogpImageUrl: `${baseUrl}/api/ogp?title=${data.title}`,
+          title,
+          ogImageUrl: `${baseUrl}/api/ogp?title=${title}`,
         },
       }
   } catch(error) {
     console.error(error)
   }
 }
-
-const BlogId:NextPage<Props> = ({ blog, ogpImageUrl }) => {
+const BlogId:NextPage<Props> = ({ blog, title,ogImageUrl }) => {
   const router = useRouter()
-  const baseUrl = process.env.NEXT_PUBLIC_API_KEY ?? '';
-  const Id = router.query.id
   return (
     <div className={styles.default}>
       <Head>
-        <title>{blog.title}</title>
+        <title>{title}</title>
         <link rel="icon" href="/favicon.png" />
         <meta
           property="og:image"
-          content={ogpImageUrl}
+          content={ogImageUrl}
         />
         <meta
           property="twitter:card"
-          content={ogpImageUrl}
-        />
+          content="summary_large_image" />
         <meta
           property="twitter:image"
-          content={ogpImageUrl}
+          content={ogImageUrl}
         />
       </Head>
       <AppbarGray onClick={() => router.push('/')} />
