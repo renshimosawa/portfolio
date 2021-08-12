@@ -8,7 +8,7 @@
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook",
-    "now-build": "cp canvas_lib64/*so.1 node_modules/canvas/build/Release/ && next build"
+    "now-build": "cp canvas_lib64/*so.1 node_modules/canvas/build/Release/ && yarn build"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
