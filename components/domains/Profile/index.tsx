@@ -83,18 +83,21 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
           グラフィックデザイナー
           <br />
           フロントエンドエンジニア
-          <br />
-          映像制作ディレクター
+          
         </p>
         <button className={styles.skillButton} onClick={onSkillClick}>
           <span>Skill Sheet</span>
         </button>
+          <p>
+            現在
+          </p>
         <p className={styles.present}>
-          ＜現在＞
           <br />
-          Quantum Box.Inc
           <br />
-          コンペヤ －デザイナー・エンジニア
+          2020/10～<br />
+          【Quantum Box.Inc】 法務会計・グラフィックデザイナー
+          <br />
+          
         </p>
         <div className={styles.linkContainer}>
           <Link href="https://www.facebook.com/ren.shimosawa">
