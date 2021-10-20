@@ -28,7 +28,7 @@
       .skillButton {
         width: 100px;
         height: 25px;
-        background: #e6e6e6;
+        background: #929292;
         border: none;
         border-radius: 15px;
         font-family: 'Josefin Sans';
@@ -38,9 +38,26 @@
           vertical-align: middle;
         }
       }
-      .present {
-        margin: 30px 0 20px 0;
-        font-family: 'Josefin Sans', 'Hiragino Kaku Gothic ProN';
+      .tableContainer{
+        display: flex;
+        justify-content:center;
+        padding:0 3vw;
+        .table {
+          text-align: left;
+          margin: 30px 0 20px 0;
+          font-size: 15px;
+          td{
+            vertical-align: top;
+            height: 70px;
+          }
+          .spBr{
+            display: block;
+          }
+          .date{
+            padding-right: 10px;
+            width: 30%;
+          }
+        }
       }
       .linkContainer {
         display: flex;
@@ -72,7 +89,6 @@
     width: 100vw;
     .container {
       display: flexbox;
-      width: 100vw;
       text-align: center;
       color: #525252;
       .name {
@@ -97,8 +113,9 @@
       .skillButton {
         margin: 0 auto;
         width: 100px;
-        height: 25px;
-        background: #e6e6e6;
+        height: 30px;
+        background: #535353;
+        color: #fff;
         border: none;
         border-radius: 15px;
         font-family: 'Josefin Sans';
@@ -106,10 +123,19 @@
           vertical-align: bottom;
         }
       }
-      .present {
-        text-align: left;
-        margin: 30px 0 20px 0;
-        font-family: 'Josefin Sans', 'Hiragino Kaku Gothic ProN';
+      .tableContainer{
+        display: flex;
+        justify-content:center;
+        .table {
+          text-align: left;
+          margin: 30px 0 20px 0;
+          .spBr{
+            display: none;
+          }
+          .date{
+            padding-right: 20px;
+          }
+        }
       }
       .linkContainer {
         display: flex;

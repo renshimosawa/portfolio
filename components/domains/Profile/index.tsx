@@ -83,22 +83,43 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
           グラフィックデザイナー
           <br />
           フロントエンドエンジニア
-          
         </p>
         <button className={styles.skillButton} onClick={onSkillClick}>
           <span>Skill Sheet</span>
         </button>
-          <p>
-            現在
-          </p>
-        <p className={styles.present}>
-          <br />
-          <br />
-          2020/10～<br />
-          【Quantum Box.Inc】 法務会計・グラフィックデザイナー
-          <br />
-          
-        </p>
+        <div className={styles.tableContainer}>
+          <table className={styles.table}>
+            <tr>
+              <td className={styles.date}>2020/2～</td>
+              <td>【開業】
+                <br className={styles.spBr} />
+                動画編集(Emotional Aomori)
+              </td>
+            </tr>
+            <tr>
+              <td className={styles.date}>2020/10～</td>
+              <td>【Quantum Box.Inc】
+                <br className={styles.spBr} />
+                法務会計・グラフィックデザイナー
+              </td>
+            </tr>
+            <tr>
+              <td className={styles.date}>2021/1～</td>
+              <td>【Quantum Box.Inc】
+                <br className={styles.spBr} />
+                フロントエンドエンジニア
+              </td>
+            </tr>
+            <tr>
+              <td className={styles.date}>2021/10～</td>
+              <td>【freee株式会社】
+                <br className={styles.spBr} />
+                フロントエンドエンジニア
+              </td>
+            </tr>
+          </table>
+        </div>
+
         <div className={styles.linkContainer}>
           <Link href="https://www.facebook.com/ren.shimosawa">
             <a target="_blank" onClick={ClickFacebook}>
