@@ -4,7 +4,6 @@ import Moment from 'react-moment'
 import { useRouter } from 'next/router'
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
-import createOgp from '../../utils/server/ogpUtils'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -52,17 +51,10 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
       ).json()
       const title = data.title
-      const Id = data.id
-      const baseUrl = {
-        production: "https://www.emotional-aomori.com/",
-        development: "http://localhost:2019",
-      }[process.env.NODE_ENV];
-      void createOgp(title,Id);
       return {
         props: {
           blog: data,
           title,
-          ogImageUrl: `${baseUrl}/api/ogp?title=${id}`,
         },
       }
   } catch(error) {
@@ -79,17 +71,7 @@ const BlogId:NextPage<Props> = ({ blog, title }) => {
         <title>{title}</title>
         <link rel="icon" href="/favicon.png" />
         {/* <meta property="og:title" content={`${BaseUrl}/ogp/${Id}.png`} /> */}
-        <meta
-          property="og:image"
-          content={`${BaseUrl}/ogp/${Id}.png`} 
-        />
-        <meta
-          property="twitter:card"
-          content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content={`${BaseUrl}/ogp/${Id}.png`} 
-        />
+      
       </Head>
       <AppbarGray onClick={() => router.push('/')} />
       <div className={styles.container}>
