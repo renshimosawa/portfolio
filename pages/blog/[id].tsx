@@ -4,7 +4,6 @@ import Moment from 'react-moment'
 import { useRouter } from 'next/router'
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
-import createOgp from '../../utils/server/ogpUtils'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -57,7 +56,6 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
         production: "https://www.emotional-aomori.com/",
         development: "http://localhost:2019",
       }[process.env.NODE_ENV];
-      void createOgp(title,Id);
       return {
         props: {
           blog: data,
