@@ -1,7 +1,6 @@
 import styles from './portfolio.module.scss'
 import React, { FC } from 'react'
-import AppbarWhite from '../../components/domains/AppbarWhite'
-import Top from '../../components/domains/Top'
+import AppbarGray from '../../components/domains/AppbarGray'
 import { useRouter } from 'next/router'
 import ImgCard from '../../components/domains/ImgItem'
 import VideoCard from '../../components/domains/VideoItem'
@@ -20,18 +19,10 @@ const Portfolio: React.FC = () => {
   return (
     <div className={styles.default}>
       <HeadCompo />
-      <AppbarWhite className={styles.appbar} onClick={() => router.push('/')} />
-      <Top
-        className={styles.top}
-        title="Portfolio"
-        FirstLabel="←Home"
-        SecondLabel="→Blog"
-        onFirstClick={() => router.push('/')}
-        onSecondClick={() => router.push('blog')}
-      />
+      <AppbarGray onClick={() => router.push('/')} />
       <Fade>
         <div className={styles.titleContainer}>
-          <p className={styles.title}>作品</p>
+          <p className={styles.title}>Portfolio</p>
         </div>
         <div className={styles.items}>
           <Link href="https://www.it-feels-it.com/">

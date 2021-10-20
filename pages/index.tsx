@@ -34,7 +34,7 @@ const Home: React.FC = () => {
           <Catch className={styles.catch} />
         </Fade>
         <Fade>
-          <Profile className={styles.profole} onSkillClick={() => router.push('/skillSheet')} />
+          <Profile className={styles.profile} onSkillClick={() => router.push('/skillSheet')} />
         </Fade>
         <Fade>
           <BackButton className={styles.backButton} onBackClick={scrollToTop} />
