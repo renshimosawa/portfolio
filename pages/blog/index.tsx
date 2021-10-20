@@ -1,6 +1,6 @@
 import styles from './blog.module.scss'
 import React, { FC } from 'react'
-import AppbarWhite from '../../components/domains/AppbarWhite'
+import AppbarGray from '../../components/domains/AppbarGray'
 import Top from '../../components/domains/Top'
 import { useRouter } from 'next/router'
 import HeadCompo from '../../components/domains/HeadCompo'
@@ -35,18 +35,10 @@ const Blog = ({ blog }) => {
   return (
     <div className={styles.default}>
       <HeadCompo />
-      <AppbarWhite className={styles.appbar} onClick={() => router.push('/')} />
-      <Top
-        className={styles.top}
-        title="Blog"
-        FirstLabel="→Portfolio"
-        SecondLabel="←Home"
-        onFirstClick={() => router.push('portfolio')}
-        onSecondClick={() => router.push('/')}
-      />
+      <AppbarGray onClick={() => router.push('/')} />
       <Fade>
         <div className={styles.titleContainer}>
-          <p className={styles.title}>記事</p>
+          <p className={styles.title}>Blog</p>
         </div>
         <div className={styles.itemsContainer}>
           {blog.map((blog) => (

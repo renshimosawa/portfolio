@@ -32,18 +32,20 @@ const skillSheet: React.FC = () => {
             <h5>Web Service</h5>
             <p>Figma</p>
             <p>LINE Business</p>
+            {/* brank */}
             <h5>Google</h5>
             <p>Sheets / Docs / Slides</p>
             <p>Cloud Platform</p>
             <p>Domains</p>
-            <p>Map Business</p>
+            <p>Map API</p>
+            <p>Analytics</p>
             {/* brank */}
-            <h5>Engneering</h5>
-            <p>HTML/CSS</p>
-            <p>JavaScript</p>
-            <p>TypeScript</p>
-            <p>React.js</p>
+            <h5>Coding</h5>
             <p>Next.js</p>
+            <p>React.js</p>
+            <p>TypeScript</p>
+            <p>JavaScript</p>
+            <p>HTML/CSS</p>
             <p>Git</p>
             <p>Lottie</p>
             <p>Micro CMS</p>
