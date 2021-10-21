@@ -63,15 +63,11 @@ export const getStaticProps = async ({params}: GetStaticPropsContext) => {
 }
 const BlogId:NextPage<Props> = ({ blog, title }) => {
   const router = useRouter()
-  const BaseUrl = "https://www.emotional-aomori.com/"
-  const { Id } = router.query; 
   return (
     <div className={styles.default}>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.png" />
-        {/* <meta property="og:title" content={`${BaseUrl}/ogp/${Id}.png`} /> */}
-      
       </Head>
       <AppbarGray onClick={() => router.push('/')} />
       <div className={styles.container}>

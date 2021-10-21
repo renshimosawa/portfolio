@@ -1,89 +1,44 @@
-@media screen and (max-width: 600px) {
-  .default {
-    width: 100vw;
-    color: #525252;
-    .appbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-    .top {
-      position: relative;
-    }
-    .titleContainer {
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-      .title {
-        font-size: xx-large;
-      }
-    }
-    .itemsContainer {
-      width: 95vw;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
-      align-items: center;
-      .item {
-        display: inline-block;
-        height: auto;
-        margin: 5%;
-        cursor: pointer;
-        .imgContainer {
-          width: 100%;
-          max-height: 80%;
-          img {
-            width: 100%;
-            // height: 100%;
-          }
-        }
-      }
+@import "../../styles/vars.scss";
+.default {
+  width: 100vw;
+  color: $text-color;
+  .appbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .top {
+    position: relative;
+  }
+  .titleContainer {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    .title {
+      font-size: xx-large;
     }
   }
-}
-@media screen and (min-width: 601px) {
-  .default {
-    width: 100vw;
-    color: #525252;
-    .appbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-    .top {
-      position: relative;
-    }
-    .titleContainer {
-      width: 100%;
-      margin: 0 auto;
-      text-align: center;
-      .title {
-        font-size: xx-large;
-      }
-    }
-    .itemsContainer {
-      width: 95vw;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 0 auto;
-      align-items: center;
-      .item {
-        display: inline-block;
+  .itemsContainer {
+    width: 95vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    .item {
+      display: inline-block;
+      height: auto;
+      margin: 5%;
+      cursor: pointer;
+      @include pc{
         width: 350px;
-        height: auto;
-        margin: 5%;
-        cursor: pointer;
-        .imgContainer {
+      }
+      .imgContainer {
+        width: 100%;
+        max-height: 80%;
+        img {
           width: 100%;
-          max-height: 80%;
-          img {
-            width: 100%;
-            // height: 100%;
-          }
         }
       }
     }
