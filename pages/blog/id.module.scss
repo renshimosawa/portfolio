@@ -1,63 +1,38 @@
-@media screen and (max-width: 600px) {
-  .default {
-    width: 100vw;
-    color: #525252;
-    .container {
-      width: 95%;
+@import "../../styles/vars.scss";
+.default {
+  width: 100vw;
+  color: $text-color;
+  .container {
+    width: 95%;
+    margin: 0 auto;
+    .contents {
+      width: 80%;
       margin: 0 auto;
-      .contents {
-        width: 95%;
-        margin: 0 auto;
-        // text-align: center;
+      @include sp{
         .title {
           font-size: large;
         }
-        .imgContainer {
-          width: 100%;
-          margin: 50px 0 50px 0;
-          display: flex;
-          .thumbnail {
+      }
+      .imgContainer {
+        width: 100%;
+        margin: 50px 0 50px 0;
+        display: flex;
+        .thumbnail {
+          width: 60%;
+          margin: 0 auto;
+          @include sp{
             width: 100%;
-            margin: 0 auto;
           }
-        }
-        .date {
-          color: #a1a1a1;
-        }
-        .main {
-          font-size: medium;
-          color: #575757;
         }
       }
-    }
-  }
-}
-@media screen and (min-width: 601px) {
-  .default {
-    width: 100vw;
-    color: #525252;
-    .container {
-      width: 95%;
-      margin: 0 auto;
-      .contents {
-        width: 80%;
-        margin: 0 auto;
-        // text-align: center;
-        .imgContainer {
-          width: 100%;
-          margin: 50px 0 50px 0;
-          display: flex;
-          .thumbnail {
-            width: 60%;
-            margin: 0 auto;
-          }
-        }
-        .date {
-          color: #a1a1a1;
-        }
-        .main {
-          font-size: large;
-          color: #575757;
+      .date {
+        color: #a1a1a1;
+      }
+      .main {
+        font-size: large;
+        color: #575757;
+        @include sp{
+          font-size: medium;
         }
       }
     }
