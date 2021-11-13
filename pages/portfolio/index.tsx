@@ -25,7 +25,7 @@ const Portfolio: React.FC = () => {
           <p className={styles.title}>Portfolio</p>
         </div>
         <div className={styles.items}>
-          <Link href="https://www.it-feels-it.com/">
+          <Link href="https://it-feels-it.com/">
             <a target="_blank">
               <ImgCard
                 style={{ margin: 15 }}
@@ -35,7 +35,7 @@ const Portfolio: React.FC = () => {
               />
             </a>
           </Link>
-          <Link href="https://www.quantum-box.com/">
+          <Link href="https://quantum-box.com/">
             <a target="_blank">
               <ImgCard
                 style={{ margin: 15 }}
