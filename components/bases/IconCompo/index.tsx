@@ -6,6 +6,7 @@ import DoubleUp from './Icons/doubleUp'
 import Github from './Icons/github'
 import Gmail from './Icons/gmail'
 import Twitter from './Icons/twitter'
+import Zenn from './Icons/zenn'
 
 export type Props = {
   className?: string
@@ -18,6 +19,7 @@ const svgMap = {
   github: Github,
   gmail: Gmail,
   twitter: Twitter,
+  zenn: Zenn,
 }
 
 export type Type = keyof typeof svgMap //enum(列挙型=またはまたはまたは)

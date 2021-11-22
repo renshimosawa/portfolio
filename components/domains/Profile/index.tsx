@@ -72,6 +72,15 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
       label: 'github',
     })
   }
+
+  const ClickZenn = () => {
+    gtag.event({
+      action: 'click_zenn',
+      category: 'link_button',
+      label: 'github',
+    })
+  }
+
   return (
     <div className={cn(styles.default, className)}>
       <div className={styles.container}>
@@ -141,6 +150,11 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
             </CopyToClipboard>
           </div>
+          <Link href="https://zenn.dev/renshimosawa">
+            <a target="_blank" onClick={ClickZenn}>
+              <IconButton className={styles.icon} type="zenn" />
+            </a>
+          </Link>
         </div>
         <Tooltips
           label="メールアドレスをコピーしました"
