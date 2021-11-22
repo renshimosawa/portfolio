@@ -1,7 +1,6 @@
 import styles from './IconButton.module.scss'
 import cn from 'classnames'
 import Icon from '../IconCompo'
-import Link from 'next/link'
 
 export type Props = {
   className?: string
@@ -10,7 +9,7 @@ export type Props = {
   onClick?: () => void
 }
 
-export type IconType = 'facebook' | 'doubleUp' | 'github' | 'gmail' | 'twitter'
+export type IconType = 'facebook' | 'doubleUp' | 'github' | 'gmail' | 'twitter' | 'zenn'
 
 const IconButton: React.FC<Props> = ({ className, style, type, onClick }) => (
   <div className={cn(styles.default, className)} style={style}>
