@@ -6,6 +6,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Link from 'next/link'
 import Tooltips from '../../bases/Tooltips'
 import * as gtag from '../../../src/lib/gtag'
+import SkillButton from '../../bases/SkillButton'
 
 export type Props = {
   className?: string
@@ -93,9 +94,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
           <br />
           フロントエンドエンジニア
         </p>
-        <button className={styles.skillButton} onClick={onSkillClick}>
-          <span>Skill Sheet</span>
-        </button>
+        <SkillButton />
         <div className={styles.tableContainer}>
           <table className={styles.table}>
             <tr>
@@ -132,7 +131,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
         <div className={styles.linkContainer}>
           <Link href="https://www.facebook.com/ren.shimosawa">
             <a target="_blank" onClick={ClickFacebook}>
-              <IconButton className={styles.icon} type="facebook" />
+              <IconButton className={styles.icon} type="facebook" label="open newtab" />
             </a>
           </Link>
           <Link href="https://twitter.com/ren_shimosawa">

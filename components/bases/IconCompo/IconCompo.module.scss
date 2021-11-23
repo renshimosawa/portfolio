@@ -3,6 +3,14 @@
   align-items: center;
   padding: 0px;
   svg {
-    fill: #707070;
+    fill: #535353;
+    transition: 0.3s;
+  }
+}
+
+.default:hover{
+  svg{
+    transition: 0.3s;
+    fill: #9b9b9b;
   }
 }
