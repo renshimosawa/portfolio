@@ -90,7 +90,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
           <br />
           フロントエンドエンジニア
         </p>
-        <SkillButton />
+        <SkillButton onSkillClick={onSkillClick} />
         <div className={styles.tableContainer}>
           <table className={styles.table}>
             <tr>
@@ -130,47 +130,47 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <IconButton className={styles.icon} type="facebook" />
             </a>
           </Link>
-          <Tooltips
+          {/* <Tooltips
             label="Open facebook"
             className={styles.facebookTooltips}
-          />
+          /> */}
           <Link href="https://twitter.com/ren_shimosawa">
             <a target="_blank" onClick={ClickTwitter} className={styles.twitterIcon}>
               <IconButton className={styles.icon} type="twitter" />
             </a>
           </Link>
-          <Tooltips
+          {/* <Tooltips
             label="Open Twitter"
             className={styles.twitterTooltips}
-          />
+          /> */}
           <Link href="https://github.com/renshimosawa">
             <a target="_blank" onClick={ClickGithub} className={styles.githubIcon}>
               <IconButton className={styles.icon} type="github" />
             </a>
           </Link>
-          <Tooltips
+          {/* <Tooltips
             label="Open Github"
             className={styles.githubTooltips}
-          />
+          /> */}
           <div className={styles.gmail}>
             <CopyToClipboard text={'ren.shimosawa.cc@gmail.com'}>
               <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
             </CopyToClipboard>
           </div>
-          <Tooltips
+          {/* <Tooltips
             label="Copy Clipboard"
             className={styles.gmailTooltips}
             style={{backgroundColor:"#AEBAA8"}}
-          />
+          /> */}
           <Link href="https://zenn.dev/renshimosawa">
             <a target="_blank" onClick={ClickZenn} className={styles.zennIcon}>
               <IconButton className={styles.icon} type="zenn" />
             </a>
           </Link>
-          <Tooltips
+          {/* <Tooltips
             label="Open Zenn"
             className={styles.zennTooltips}
-          />
+          /> */}
         </div>
         <Tooltips
           label="メールアドレスをコピーしました"
