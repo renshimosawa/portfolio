@@ -57,7 +57,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
       label: 'facebook',
     })
   }
-
   const ClickTwitter = () => {
     gtag.event({
       action: 'click_twitter',
@@ -65,7 +64,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
       label: 'twitter',
     })
   }
-
   const ClickGithub = () => {
     gtag.event({
       action: 'click_github',
@@ -73,7 +71,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
       label: 'github',
     })
   }
-
   const ClickZenn = () => {
     gtag.event({
       action: 'click_zenn',
@@ -81,7 +78,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
       label: 'github',
     })
   }
-
   return (
     <div className={cn(styles.default, className)}>
       <div className={styles.container}>
@@ -98,7 +94,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
         <div className={styles.tableContainer}>
           <table className={styles.table}>
             <tr>
-              <td className={styles.date}>2020/2～</td>
+              <td className={styles.date}>2020/02～</td>
               <td>【開業】
                 <br className={styles.spBr} />
                 動画編集(Emotional Aomori)
@@ -108,11 +104,11 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <td className={styles.date}>2020/10～</td>
               <td>【Quantum Box.Inc】
                 <br className={styles.spBr} />
-                法務会計・グラフィックデザイナー
+               グラフィックデザイナー
               </td>
             </tr>
             <tr>
-              <td className={styles.date}>2021/1～</td>
+              <td className={styles.date}>2021/01～</td>
               <td>【Quantum Box.Inc】
                 <br className={styles.spBr} />
                 フロントエンドエンジニア
@@ -130,30 +126,51 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
 
         <div className={styles.linkContainer}>
           <Link href="https://www.facebook.com/ren.shimosawa">
-            <a target="_blank" onClick={ClickFacebook}>
-              <IconButton className={styles.icon} type="facebook" label="open newtab" />
+            <a target="_blank" onClick={ClickFacebook} className={styles.facebookIcon}>
+              <IconButton className={styles.icon} type="facebook" />
             </a>
           </Link>
+          <Tooltips
+            label="Open facebook"
+            className={styles.facebookTooltips}
+          />
           <Link href="https://twitter.com/ren_shimosawa">
-            <a target="_blank" onClick={ClickTwitter}>
+            <a target="_blank" onClick={ClickTwitter} className={styles.twitterIcon}>
               <IconButton className={styles.icon} type="twitter" />
             </a>
           </Link>
+          <Tooltips
+            label="Open Twitter"
+            className={styles.twitterTooltips}
+          />
           <Link href="https://github.com/renshimosawa">
-            <a target="_blank" onClick={ClickGithub}>
+            <a target="_blank" onClick={ClickGithub} className={styles.githubIcon}>
               <IconButton className={styles.icon} type="github" />
             </a>
           </Link>
-          <div>
+          <Tooltips
+            label="Open Github"
+            className={styles.githubTooltips}
+          />
+          <div className={styles.gmail}>
             <CopyToClipboard text={'ren.shimosawa.cc@gmail.com'}>
               <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
             </CopyToClipboard>
           </div>
+          <Tooltips
+            label="Copy Clipboard"
+            className={styles.gmailTooltips}
+            style={{backgroundColor:"#AEBAA8"}}
+          />
           <Link href="https://zenn.dev/renshimosawa">
-            <a target="_blank" onClick={ClickZenn}>
+            <a target="_blank" onClick={ClickZenn} className={styles.zennIcon}>
               <IconButton className={styles.icon} type="zenn" />
             </a>
           </Link>
+          <Tooltips
+            label="Open Zenn"
+            className={styles.zennTooltips}
+          />
         </div>
         <Tooltips
           label="メールアドレスをコピーしました"

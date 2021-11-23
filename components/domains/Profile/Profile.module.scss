@@ -66,10 +66,55 @@
           width: 28px;
         }
       }
-      .gmailIcon {
+      .gmail{
         svg {
           width: 28px;
         }
+      }
+      .facebookTooltips{
+        position: absolute;
+        top: 40px;
+        left: -20px;
+        display: none;
+      }
+      .facebookIcon:hover + .facebookTooltips{
+        display: block;
+      }
+      .twitterTooltips{
+        position: absolute;
+        top: 40px;
+        left: 35px;
+        display: none;
+      }
+      .twitterIcon:hover + .twitterTooltips{
+        display: block;
+      }
+      .githubTooltips{
+        position: absolute;
+        top: 40px;
+        left: 95px;
+        display: none;
+      }
+      .githubIcon:hover + .githubTooltips{
+        display: block;
+      }
+      .gmailTooltips{
+        position: absolute;
+        top: 40px;
+        left: 145px;
+        display: none;
+      }
+      .gmail:hover + .gmailTooltips{
+        display: block;
+      }
+      .zennTooltips{
+        position: absolute;
+        top: 40px;
+        right: -10px;
+        display: none;
+      }
+      .zennIcon:hover + .zennTooltips{
+        display: block;
       }
     }
 
