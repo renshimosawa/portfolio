@@ -14,7 +14,7 @@ import { animateScroll as scroll } from 'react-scroll'
 const Home: React.FC = () => {
   const router = useRouter()
   const scrollToTop = () => {
-    scroll.scrollToTop()
+    scroll.scrollToTop();
   }
 
   return (
