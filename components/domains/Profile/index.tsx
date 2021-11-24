@@ -7,11 +7,13 @@ import Link from 'next/link'
 import Tooltips from '../../bases/Tooltips'
 import * as gtag from '../../../src/lib/gtag'
 import SkillButton from '../../bases/SkillButton'
+import ReactTooltip from 'react-tooltip';
 
 export type Props = {
   className?: string
   onSkillClick?: () => void
 }
+
 
 const useFadeInOut = (durationSec: number) => {
   const [display, setDisplay] = useState(false)
@@ -126,51 +128,38 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
 
         <div className={styles.linkContainer}>
           <Link href="https://www.facebook.com/ren.shimosawa">
-            <a target="_blank" onClick={ClickFacebook} className={styles.facebookIcon}>
+            <a data-tip='Open Facebook' target="_blank" onClick={ClickFacebook} className={styles.facebookIcon}>
               <IconButton className={styles.icon} type="facebook" />
+              <ReactTooltip />
             </a>
           </Link>
-          {/* <Tooltips
-            label="Open facebook"
-            className={styles.facebookTooltips}
-          /> */}
           <Link href="https://twitter.com/ren_shimosawa">
-            <a target="_blank" onClick={ClickTwitter} className={styles.twitterIcon}>
+            <a data-tip='Open Twitter' target="_blank" onClick={ClickTwitter} className={styles.twitterIcon}>
               <IconButton className={styles.icon} type="twitter" />
+              <ReactTooltip />
             </a>
           </Link>
-          {/* <Tooltips
-            label="Open Twitter"
-            className={styles.twitterTooltips}
-          /> */}
+          
           <Link href="https://github.com/renshimosawa">
-            <a target="_blank" onClick={ClickGithub} className={styles.githubIcon}>
+            <a data-tip='Open Github' target="_blank" onClick={ClickGithub} className={styles.githubIcon}>
               <IconButton className={styles.icon} type="github" />
+              <ReactTooltip />
             </a>
           </Link>
-          {/* <Tooltips
-            label="Open Github"
-            className={styles.githubTooltips}
-          /> */}
-          <div className={styles.gmail}>
+          
+          <div className={styles.gmail} data-tip='Copy Clipboard'>
             <CopyToClipboard text={'ren.shimosawa.cc@gmail.com'}>
               <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
             </CopyToClipboard>
           </div>
-          {/* <Tooltips
-            label="Copy Clipboard"
-            className={styles.gmailTooltips}
-            style={{backgroundColor:"#AEBAA8"}}
-          /> */}
+          <ReactTooltip />
+          
           <Link href="https://zenn.dev/renshimosawa">
-            <a target="_blank" onClick={ClickZenn} className={styles.zennIcon}>
+            <a data-tip='Open Zenn' target="_blank" onClick={ClickZenn} className={styles.zennIcon}>
               <IconButton className={styles.icon} type="zenn" />
+              <ReactTooltip />
             </a>
           </Link>
-          {/* <Tooltips
-            label="Open Zenn"
-            className={styles.zennTooltips}
-          /> */}
         </div>
         <Tooltips
           label="メールアドレスをコピーしました"

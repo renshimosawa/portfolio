@@ -41,7 +41,7 @@ const Top: React.FC<Props> = ({
       </Fade>
     </div>
     <Particles
-      style={{ position: "absolute", top: 0, left: 0, width: "100%", zIndex:9 }}
+      style={{ position: "absolute", top: 0, left: 0, zIndex:9 }}
       params={ParticlesSnow as RecursivePartial<IOptions>}
     />
     <TopBack className={styles.back} />
