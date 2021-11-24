@@ -130,20 +130,18 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
           <Link href="https://www.facebook.com/ren.shimosawa">
             <a data-tip='Open Facebook' target="_blank" onClick={ClickFacebook} className={styles.facebookIcon}>
               <IconButton className={styles.icon} type="facebook" />
-              <ReactTooltip />
             </a>
           </Link>
+              
           <Link href="https://twitter.com/ren_shimosawa">
             <a data-tip='Open Twitter' target="_blank" onClick={ClickTwitter} className={styles.twitterIcon}>
               <IconButton className={styles.icon} type="twitter" />
-              <ReactTooltip />
             </a>
           </Link>
           
           <Link href="https://github.com/renshimosawa">
             <a data-tip='Open Github' target="_blank" onClick={ClickGithub} className={styles.githubIcon}>
               <IconButton className={styles.icon} type="github" />
-              <ReactTooltip />
             </a>
           </Link>
           
@@ -152,15 +150,14 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
             </CopyToClipboard>
           </div>
-          <ReactTooltip />
           
           <Link href="https://zenn.dev/renshimosawa">
             <a data-tip='Open Zenn' target="_blank" onClick={ClickZenn} className={styles.zennIcon}>
               <IconButton className={styles.icon} type="zenn" />
-              <ReactTooltip />
             </a>
           </Link>
         </div>
+        <ReactTooltip border={true} arrowColor='none' place="bottom" effect='solid' type='info' />
         <Tooltips
           label="メールアドレスをコピーしました"
           className={styles.tooltips}
