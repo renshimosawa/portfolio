@@ -20,7 +20,8 @@
     "**/*.tsx",
     "pages/blog/[id].tsx",
     "pages/_document.jsx",
-    "src/lib/gtag.ts"
-, "pages/api/blog/[id]/ogp.ts"  ],
+    "src/lib/gtag.ts",
+    "pages/api/blog/[id]/ogp.ts"
+  ],
   "exclude": ["node_modules"]
 }
