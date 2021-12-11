@@ -1,6 +1,6 @@
 import styles from './OverlayMap.module.scss'
 import cn from 'classnames'
-import React, { FC } from 'react'
+import React from 'react'
 import { GoogleMap, LoadScript, GroundOverlay } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
@@ -9,7 +9,7 @@ export type Props = {
   className?: string
 }
 
-const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY
+const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
   width: '900px',
   height: '600px',
@@ -19,17 +19,21 @@ const center = {
   lat: 40.510153,
   lng: 141.491653,
 }
-const bounds = {
-  north: 40.5246,
-  south: 40.4896,
-  east: 141.5131,
-  west: 141.4666,
-}
+// const bounds = {
+//   south: 40.494315,
+//   west: 141.466797,
+//   north: 40.519499,
+//   east: 141.513105,
+// }
+const bounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(40.494315, 141.466797),
+  new google.maps.LatLng(40.519499, 141.513105),
+)
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
-  const [inputValue, setInputValue] = React.useState('0.5')
+  const [inputValue, setInputValue] = React.useState(0.5)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value)
+    setInputValue(e.target.valueAsNumber)
   }
   return (
     <div className={cn(styles.default, className)}>
@@ -53,11 +57,11 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
           />
         </GoogleMap>
       </LoadScript>
-      <p>古地図透明度</p>
+      {/* <p>古地図透明度</p>
       <Box sx={{ width: 300 }}>
         <Slider
           aria-label="Temperature"
-          defaultValue={1.0}
+          defaultValue={0.5}
           getAriaValueText={valuetext}
           valueLabelDisplay="auto"
           step={0.1}
@@ -66,7 +70,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
           max={1.0}
           onChange={(e) => handleChange(e)}
         />
-      </Box>
+      </Box> */}
     </div>
   )
 }
