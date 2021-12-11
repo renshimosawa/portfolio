@@ -10,11 +10,12 @@ import { useRouter } from 'next/router'
 import HeadCompo from '../components/domains/HeadCompo'
 import Footer from '../components/domains/Footer'
 import { animateScroll as scroll } from 'react-scroll'
+import OverlayMap from '../components/domains/OverlayMap'
 
 const Home: React.FC = () => {
   const router = useRouter()
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    scroll.scrollToTop()
   }
 
   return (
@@ -30,6 +31,7 @@ const Home: React.FC = () => {
           onFirstClick={() => router.push('/portfolio')}
           onSecondClick={() => router.push('/blog')}
         />
+        <OverlayMap />
         <Fade>
           <Catch className={styles.catch} />
         </Fade>
