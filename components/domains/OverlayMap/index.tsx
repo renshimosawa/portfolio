@@ -25,16 +25,16 @@ const center = {
 //   north: 40.519499,
 //   east: 141.513105,
 // }
-const bounds = new google.maps.LatLngBounds(
-  new google.maps.LatLng(40.494315, 141.466797),
-  new google.maps.LatLng(40.519499, 141.513105),
-)
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
   const [inputValue, setInputValue] = React.useState(0.5)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.valueAsNumber)
   }
+  const bounds = new google.maps.LatLngBounds(
+    new google.maps.LatLng(40.494315, 141.466797),
+    new google.maps.LatLng(40.519499, 141.513105),
+  )
   return (
     <div className={cn(styles.default, className)}>
       <LoadScript googleMapsApiKey={key}>
