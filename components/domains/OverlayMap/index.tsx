@@ -20,16 +20,14 @@ const center = {
   lng: 141.491653,
 }
 
-// const bounds = new google.maps.LatLngBounds(
-//   new google.maps.LatLng(40.494315, 141.466797),
-//   new google.maps.LatLng(40.519499, 141.513105),
-// )
-
 const OverlayMap: React.FC<Props> = ({ className }) => {
   const [inputValue, setInputValue] = React.useState(0.5)
   const handleChange = (e: any) => {
     setInputValue(e.target.value)
   }
+  const sw = new window.google.maps.LatLng(40.494315, 141.466797)
+  const ne = new window.google.maps.LatLng(40.519499, 141.513105)
+  const bounds = new window.google.maps.LatLngBounds(sw, ne)
   return (
     <div className={cn(styles.default, className)}>
       <LoadScriptNext googleMapsApiKey={key}>
@@ -52,7 +50,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
           />
         </GoogleMap>
       </LoadScriptNext>
-      <p>古地図透明度</p>
+      <p>古地図不透明度</p>
       <Box sx={{ width: 300 }}>
         <Slider
           aria-label="opacity"
@@ -215,7 +213,5 @@ const MapStyles = [
     ],
   },
 ]
-const sw = new window.google.maps.LatLng(40.494315, 141.466797)
-const ne = new window.google.maps.LatLng(40.519499, 141.513105)
-const bounds = new window.google.maps.LatLngBounds(sw, ne)
+
 export default OverlayMap
