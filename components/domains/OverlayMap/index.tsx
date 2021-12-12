@@ -25,49 +25,53 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
   const handleChange = (e: any) => {
     setInputValue(e.target.value)
   }
-  if (typeof window !== 'undefined') {
-    const sw = new window.google.maps.LatLng(40.494315, 141.466797)
-    const ne = new window.google.maps.LatLng(40.519499, 141.513105)
-    const bounds = new window.google.maps.LatLngBounds(sw, ne)
-
-    return (
-      <div className={cn(styles.default, className)}>
-        <LoadScriptNext googleMapsApiKey={key}>
-          <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={17}
-            options={{
-              gestureHandling: 'greedy',
-              streetViewControl: false,
-              fullscreenControl: false,
-              styles: MapStyles,
-            }}
-          >
-            <GroundOverlay
-              key={'url'}
-              url="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=19651b33-029c-4d12-9c81-bc4334aabc1d"
-              bounds={bounds}
-              opacity={inputValue}
-            />
-          </GoogleMap>
-        </LoadScriptNext>
-        <p>古地図不透明度</p>
-        <Box sx={{ width: 300 }}>
-          <Slider
-            aria-label="opacity"
-            defaultValue={0.5}
-            valueLabelDisplay="auto"
-            step={0.1}
-            marks
-            min={0.0}
-            max={1.0}
-            onChange={(e) => handleChange(e)}
-          />
-        </Box>
-      </div>
-    )
+  const OverlayData = () => {
+    if (typeof window !== 'undefined') {
+      const sw = new window.google.maps.LatLng(40.494315, 141.466797)
+      const ne = new window.google.maps.LatLng(40.519499, 141.513105)
+      const bounds = new window.google.maps.LatLngBounds(sw, ne)
+      return (
+        <GroundOverlay
+          key={'url'}
+          url="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=19651b33-029c-4d12-9c81-bc4334aabc1d"
+          bounds={bounds}
+          opacity={inputValue}
+        />
+      )
+    }
   }
+  return (
+    <div className={cn(styles.default, className)}>
+      <LoadScriptNext googleMapsApiKey={key}>
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={17}
+          options={{
+            gestureHandling: 'greedy',
+            streetViewControl: false,
+            fullscreenControl: false,
+            styles: MapStyles,
+          }}
+        >
+          <OverlayData />
+        </GoogleMap>
+      </LoadScriptNext>
+      <p>古地図不透明度</p>
+      <Box sx={{ width: 300 }}>
+        <Slider
+          aria-label="opacity"
+          defaultValue={0.5}
+          valueLabelDisplay="auto"
+          step={0.1}
+          marks
+          min={0.0}
+          max={1.0}
+          onChange={(e) => handleChange(e)}
+        />
+      </Box>
+    </div>
+  )
 }
 
 const MapStyles = [
