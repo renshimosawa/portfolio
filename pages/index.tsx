@@ -10,11 +10,13 @@ import { useRouter } from 'next/router'
 import HeadCompo from '../components/domains/HeadCompo'
 import Footer from '../components/domains/Footer'
 import { animateScroll as scroll } from 'react-scroll'
+import OverlayMap from '../components/domains/OverlayMap'
+import SkillButton from '../components/bases/SkillButton'
 
 const Home: React.FC = () => {
   const router = useRouter()
   const scrollToTop = () => {
-    scroll.scrollToTop();
+    scroll.scrollToTop()
   }
 
   return (
@@ -31,6 +33,20 @@ const Home: React.FC = () => {
           onSecondClick={() => router.push('/blog')}
         />
         <Fade>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <p style={{ textAlign: 'center' }}>今つくろうとしてるアプリの実験場</p>
+            <SkillButton
+              label="TESTLABへ"
+              style={{ textAlign: 'center' }}
+              onSkillClick={() => router.push('/test-lab')}
+            />
+          </div>
           <Catch className={styles.catch} />
         </Fade>
         <Fade>
