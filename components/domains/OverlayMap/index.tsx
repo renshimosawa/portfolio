@@ -11,8 +11,8 @@ export type Props = {
 
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
-  width: '900px',
-  height: '600px',
+  width: '90vw',
+  height: '70vh',
 }
 
 const center = {
@@ -27,8 +27,8 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
   }
   const OverlayData = () => {
     if (typeof window !== 'undefined') {
-      const sw = new window.google.maps.LatLng(40.494315, 141.466797)
-      const ne = new window.google.maps.LatLng(40.519499, 141.513105)
+      const sw = new window.google.maps.LatLng(40.4943, 141.4667)
+      const ne = new window.google.maps.LatLng(40.52, 141.513105)
       const bounds = new window.google.maps.LatLngBounds(sw, ne)
       return (
         <GroundOverlay
@@ -42,6 +42,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
   }
   return (
     <div className={cn(styles.default, className)}>
+      <p>今こういうネイティブアプリで作りたいから、ここで試してるやつ</p>
       <LoadScriptNext googleMapsApiKey={key}>
         <GoogleMap
           mapContainerStyle={containerStyle}
@@ -58,7 +59,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
         </GoogleMap>
       </LoadScriptNext>
       <p>古地図不透明度</p>
-      <Box sx={{ width: 300 }}>
+      <Box sx={{ width: '80vw' }}>
         <Slider
           aria-label="opacity"
           defaultValue={0.5}
