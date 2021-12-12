@@ -6,7 +6,8 @@
     "dev": "next dev -p 2019",
     "build": "next build && next export",
     "start": "next start",
-    "fmt": "prettier --write **/*.{js,ts,tsx,json,md,html}"
+    "fmt": "prettier --write **/*.{js,ts,tsx,json,md,html}",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",
