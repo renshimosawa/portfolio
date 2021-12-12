@@ -1,8 +1,10 @@
 import React, { FC } from 'react'
 import OverlayMap from '../../components/domains/OverlayMap'
+import HeadCompo from '../../components/domains/HeadCompo'
 const testLab: React.FC = () => {
   return (
     <div>
+      <HeadCompo />
       <h2 style={{ padding: '0 20px', textAlign: 'center' }}>
         文久改正八戸御城下略図 on Google Map
       </h2>
