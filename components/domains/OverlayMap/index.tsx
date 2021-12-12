@@ -12,12 +12,12 @@ export type Props = {
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
   width: '90vw',
-  height: '65vh',
+  height: '58vh',
 }
 
 const center = {
-  lat: 40.510153,
-  lng: 141.491653,
+  lat: 40.513103,
+  lng: 141.4897,
 }
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
@@ -46,7 +46,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={17}
+          zoom={16}
           options={{
             gestureHandling: 'greedy',
             streetViewControl: false,
