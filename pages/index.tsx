@@ -11,9 +11,7 @@ import HeadCompo from '../components/domains/HeadCompo'
 import Footer from '../components/domains/Footer'
 import { animateScroll as scroll } from 'react-scroll'
 import OverlayMap from '../components/domains/OverlayMap'
-import dynamic from 'next/dynamic'
 
-const DynamicComponent = dynamic(() => import('../components/domains/OverlayMap'))
 const Home: React.FC = () => {
   const router = useRouter()
   const scrollToTop = () => {
@@ -33,7 +31,7 @@ const Home: React.FC = () => {
           onFirstClick={() => router.push('/portfolio')}
           onSecondClick={() => router.push('/blog')}
         />
-        <DynamicComponent />
+        <OverlayMap />
         <Fade>
           <Catch className={styles.catch} />
         </Fade>
