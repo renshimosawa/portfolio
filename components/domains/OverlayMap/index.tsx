@@ -19,9 +19,7 @@ const center = {
   lat: 40.510153,
   lng: 141.491653,
 }
-const sw = new google.maps.LatLng(40.494315, 141.466797)
-const ne = new google.maps.LatLng(40.519499, 141.513105)
-const bounds = new google.maps.LatLngBounds(sw, ne)
+
 // const bounds = new google.maps.LatLngBounds(
 //   new google.maps.LatLng(40.494315, 141.466797),
 //   new google.maps.LatLng(40.519499, 141.513105),
@@ -217,7 +215,7 @@ const MapStyles = [
     ],
   },
 ]
-const valuetext = (value) => {
-  return `${value}`
-}
+const sw = new google.maps.LatLng(40.494315, 141.466797)
+const ne = new google.maps.LatLng(40.519499, 141.513105)
+const bounds = new google.maps.LatLngBounds(sw, ne)
 export default OverlayMap
