@@ -1,7 +1,7 @@
 import styles from './OverlayMap.module.scss'
 import cn from 'classnames'
 import React from 'react'
-import { GoogleMap, LoadScript, GroundOverlay } from '@react-google-maps/api'
+import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 
@@ -19,25 +19,25 @@ const center = {
   lat: 40.510153,
   lng: 141.491653,
 }
-// const bounds = {
-//   south: 40.494315,
-//   west: 141.466797,
-//   north: 40.519499,
-//   east: 141.513105,
-// }
+const bounds = {
+  south: 40.494315,
+  west: 141.466797,
+  north: 40.519499,
+  east: 141.513105,
+}
+// const bounds = new google.maps.LatLngBounds(
+//   new google.maps.LatLng(40.494315, 141.466797),
+//   new google.maps.LatLng(40.519499, 141.513105),
+// )
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
   const [inputValue, setInputValue] = React.useState(0.5)
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.valueAsNumber)
+  const handleChange = (e: any) => {
+    setInputValue(e.target.value)
   }
-  const bounds = new google.maps.LatLngBounds(
-    new google.maps.LatLng(40.494315, 141.466797),
-    new google.maps.LatLng(40.519499, 141.513105),
-  )
   return (
     <div className={cn(styles.default, className)}>
-      <LoadScript googleMapsApiKey={key}>
+      <LoadScriptNext googleMapsApiKey={key}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
@@ -56,13 +56,12 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
             opacity={inputValue}
           />
         </GoogleMap>
-      </LoadScript>
-      {/* <p>古地図透明度</p>
+      </LoadScriptNext>
+      <p>古地図透明度</p>
       <Box sx={{ width: 300 }}>
         <Slider
-          aria-label="Temperature"
+          aria-label="opacity"
           defaultValue={0.5}
-          getAriaValueText={valuetext}
           valueLabelDisplay="auto"
           step={0.1}
           marks
@@ -70,7 +69,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
           max={1.0}
           onChange={(e) => handleChange(e)}
         />
-      </Box> */}
+      </Box>
     </div>
   )
 }
