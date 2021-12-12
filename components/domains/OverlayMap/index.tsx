@@ -12,7 +12,7 @@ export type Props = {
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
   width: '90vw',
-  height: '70vh',
+  height: '65vh',
 }
 
 const center = {
@@ -42,7 +42,6 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
   }
   return (
     <div className={cn(styles.default, className)}>
-      <p>今こういうネイティブアプリで作りたいから、ここで試してるやつ</p>
       <LoadScriptNext googleMapsApiKey={key}>
         <GoogleMap
           mapContainerStyle={containerStyle}
