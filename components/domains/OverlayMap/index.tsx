@@ -215,7 +215,7 @@ const MapStyles = [
     ],
   },
 ]
-const sw = new google.maps.LatLng(40.494315, 141.466797)
-const ne = new google.maps.LatLng(40.519499, 141.513105)
-const bounds = new google.maps.LatLngBounds(sw, ne)
+const sw = new window.google.maps.LatLng(40.494315, 141.466797)
+const ne = new window.google.maps.LatLng(40.519499, 141.513105)
+const bounds = new window.google.maps.LatLngBounds(sw, ne)
 export default OverlayMap
