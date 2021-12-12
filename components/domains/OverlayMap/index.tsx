@@ -27,7 +27,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
   }
   const OverlayData = () => {
     if (typeof window !== 'undefined') {
-      const sw = new window.google.maps.LatLng(40.49426, 141.4666)
+      const sw = new window.google.maps.LatLng(40.4942, 141.4666)
       const ne = new window.google.maps.LatLng(40.52, 141.513105)
       const bounds = new window.google.maps.LatLngBounds(sw, ne)
       return (
