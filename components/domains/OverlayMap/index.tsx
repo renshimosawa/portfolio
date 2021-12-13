@@ -62,7 +62,8 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
         <Slider
           aria-label="opacity"
           defaultValue={0.5}
-          step={0.01}
+          step={0.1}
+          marks
           min={0.0}
           max={1.0}
           onChange={(e) => handleChange(e)}
