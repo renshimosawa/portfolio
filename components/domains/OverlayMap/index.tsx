@@ -22,7 +22,7 @@ const center = {
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
   const [inputValue, setInputValue] = React.useState(0.5)
-  const handleChange = (e: any) => {
+  const handleChange = (e) => {
     setInputValue(e.target.value)
   }
   const OverlayData = () => {
