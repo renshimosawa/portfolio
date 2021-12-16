@@ -11,6 +11,13 @@ import Footer from '../../components/domains/Footer'
 import Link from 'next/link'
 import { animateScroll as scroll } from 'react-scroll'
 
+// OGP
+const Title = `Ren's portfolio`
+const Description = '下沢廉のポートフォリオです。過去に作成した動画、イラスト、Webページなどです。'
+const Url = 'https://emotional-aomori.com/portfolio/'
+const OgpImage =
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
+
 const Portfolio: React.FC = () => {
   const router = useRouter()
   const scrollToTop = () => {
@@ -18,7 +25,18 @@ const Portfolio: React.FC = () => {
   }
   return (
     <div className={styles.default}>
-      <HeadCompo />
+      <HeadCompo
+        title={Title}
+        description={Description}
+        ogUrl={Url}
+        ogTitle={Title}
+        ogDescription={Description}
+        ogImage={OgpImage}
+        twitterUrl={Url}
+        twitterTitle={Title}
+        twitterDescription={Description}
+        twitterImage={OgpImage}
+      />
       <AppbarGray onClick={() => router.push('/')} />
       <Fade>
         <div className={styles.titleContainer}>

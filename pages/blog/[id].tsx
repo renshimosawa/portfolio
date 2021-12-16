@@ -3,7 +3,7 @@ import AppbarGray from '../../components/domains/AppbarGray'
 import Moment from 'react-moment'
 import { useRouter } from 'next/router'
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
-import Head from 'next/head'
+import HeadCompo from '../../components/domains/HeadCompo'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -33,8 +33,8 @@ const key = {
   headers: { 'X-API-KEY': process.env.NEXT_PUBLIC_API_KEY },
 }
 export const getStaticPaths = async () => {
-  try{
-    const data:microCmsResponse<Blog> = await (
+  try {
+    const data: microCmsResponse<Blog> = await (
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog', key)
     ).json()
     const paths = data.contents.map((content) => `/blog/${content.id}`)
@@ -44,31 +44,47 @@ export const getStaticPaths = async () => {
   }
 }
 
-export const getStaticProps = async ({params}: GetStaticPropsContext) => {
-  const id =  params?.id ?? ''
-  try{
-    const data:Blog = await (
+export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
+  const id = params?.id ?? ''
+  try {
+    const data: Blog = await (
       await fetch('https://emotional-aomori.microcms.io/api/v1/blog/' + id, key)
-      ).json()
-      const title = data.title
-      return {
-        props: {
-          blog: data,
-          title,
-        },
-      }
-  } catch(error) {
+    ).json()
+    const title = data.title
+    return {
+      props: {
+        blog: data,
+        title,
+      },
+    }
+  } catch (error) {
     console.error(error)
   }
 }
-const BlogId:NextPage<Props> = ({ blog, title }) => {
+
+// OGP
+const Description =
+  '下沢廉のブログです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
+const OgpImage =
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
+
+const BlogId: NextPage<Props> = ({ blog, title }) => {
   const router = useRouter()
+  const Url = 'https://emotional-aomori.com/' + router.query
   return (
     <div className={styles.default}>
-      <Head>
-        <title>{title}</title>
-        <link rel="icon" href="/favicon.png" />
-      </Head>
+      <HeadCompo
+        title={title}
+        description={Description}
+        ogUrl={Url}
+        ogTitle={title}
+        ogDescription={Description}
+        ogImage={OgpImage}
+        twitterUrl={Url}
+        twitterTitle={title}
+        twitterDescription={Description}
+        twitterImage={OgpImage}
+      />
       <AppbarGray onClick={() => router.push('/')} />
       <div className={styles.container}>
         <div className={styles.contents}>
