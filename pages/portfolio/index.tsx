@@ -11,6 +11,13 @@ import Footer from '../../components/domains/Footer'
 import Link from 'next/link'
 import { animateScroll as scroll } from 'react-scroll'
 
+// OGP
+const Title = `Ren's portfolio`
+const Description = '下沢廉のポートフォリオです。過去に作成した動画、イラスト、Webページなどです。'
+const Url = 'https://emotional-aomori.com/portfolio/'
+const OgpImage =
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
+
 const Portfolio: React.FC = () => {
   const router = useRouter()
   const scrollToTop = () => {
@@ -18,7 +25,18 @@ const Portfolio: React.FC = () => {
   }
   return (
     <div className={styles.default}>
-      <HeadCompo />
+      <HeadCompo
+        title={Title}
+        description={Description}
+        ogUrl={Url}
+        ogTitle={Title}
+        ogDescription={Description}
+        ogImage={OgpImage}
+        twitterUrl={Url}
+        twitterTitle={Title}
+        twitterDescription={Description}
+        twitterImage={OgpImage}
+      />
       <AppbarGray onClick={() => router.push('/')} />
       <Fade>
         <div className={styles.titleContainer}>
@@ -30,7 +48,7 @@ const Portfolio: React.FC = () => {
               <ImgCard
                 style={{ margin: 15 }}
                 labelStyle={{ color: '#575757' }}
-                label="【デザイン&コーディング】it feels it HP"
+                label="【Web制作】it feels it HP"
                 imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/ogp.jpg?alt=media&token=fff0561e-3cd7-45e1-9a3c-8be8d33cdf8d"
               />
             </a>
@@ -40,8 +58,8 @@ const Portfolio: React.FC = () => {
               <ImgCard
                 style={{ margin: 15 }}
                 labelStyle={{ color: '#575757' }}
-                label="【デザイン&コーディング】Quantum Box HP"
-                imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=893d7d0f-2bbc-4446-964b-79cec4ed3e4a"
+                label="【Web制作】Quantum Box HP"
+                imgUrl="https://firebasestorage.googleapis.com/v0/b/allergy-card-c1149.appspot.com/o/OGP.png?alt=media&token=efe1ff32-29a9-4384-a3ad-6a42a20cd9cf"
               />
             </a>
           </Link>
