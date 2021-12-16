@@ -14,7 +14,7 @@ import { animateScroll as scroll } from 'react-scroll'
 // OGP
 const Title = `Ren's portfolio`
 const Description = '下沢廉のポートフォリオです。過去に作成した動画、イラスト、Webページなどです。'
-const Url = 'https://emotional-aomori.com/portfolio/'
+const Url = 'https://emotional-aomori.com/portfolio'
 const OgpImage =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
 

@@ -30,7 +30,7 @@ export const getStaticProps = async () => {
 const Title = 'Emotional Aomori'
 const Description =
   '下沢廉のブログです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
-const Url = 'https://emotional-aomori.com/blog/'
+const Url = 'https://emotional-aomori.com/blog'
 const OgpImage =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
 
