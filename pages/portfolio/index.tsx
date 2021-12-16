@@ -48,7 +48,7 @@ const Portfolio: React.FC = () => {
               <ImgCard
                 style={{ margin: 15 }}
                 labelStyle={{ color: '#575757' }}
-                label="【デザイン&コーディング】it feels it HP"
+                label="【Web制作】it feels it HP"
                 imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/ogp.jpg?alt=media&token=fff0561e-3cd7-45e1-9a3c-8be8d33cdf8d"
               />
             </a>
@@ -58,8 +58,8 @@ const Portfolio: React.FC = () => {
               <ImgCard
                 style={{ margin: 15 }}
                 labelStyle={{ color: '#575757' }}
-                label="【デザイン&コーディング】Quantum Box HP"
-                imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=893d7d0f-2bbc-4446-964b-79cec4ed3e4a"
+                label="【Web制作】Quantum Box HP"
+                imgUrl="https://firebasestorage.googleapis.com/v0/b/allergy-card-c1149.appspot.com/o/OGP.png?alt=media&token=efe1ff32-29a9-4384-a3ad-6a42a20cd9cf"
               />
             </a>
           </Link>
