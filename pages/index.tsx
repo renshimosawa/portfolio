@@ -68,7 +68,7 @@ const Home: React.FC = () => {
           <Catch className={styles.catch} />
         </Fade>
         <Fade>
-          <Profile className={styles.profile} onSkillClick={() => router.push('/skillSheet')} />
+          <Profile className={styles.profile} onSkillClick={() => router.push('/skill-sheet')} />
         </Fade>
         <Fade>
           <BackButton className={styles.backButton} onBackClick={scrollToTop} />
