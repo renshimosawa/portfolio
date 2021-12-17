@@ -63,6 +63,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 }
 
 // OGP
+const Type = 'artcle'
 const Description =
   '下沢廉のブログです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
 const OgpImage =
@@ -76,6 +77,7 @@ const BlogId: NextPage<Props> = ({ blog, title }) => {
       <HeadCompo
         title={title}
         description={Description}
+        ogType={Type}
         ogUrl={Url}
         ogTitle={title}
         ogDescription={Description}

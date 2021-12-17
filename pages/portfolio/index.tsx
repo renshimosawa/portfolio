@@ -13,6 +13,7 @@ import { animateScroll as scroll } from 'react-scroll'
 
 // OGP
 const Title = `Ren's portfolio`
+const Type = 'artcle'
 const Description = '下沢廉のポートフォリオです。過去に作成した動画、イラスト、Webページなどです。'
 const Url = 'https://emotional-aomori.com/portfolio'
 const OgpImage =
@@ -28,6 +29,7 @@ const Portfolio: React.FC = () => {
       <HeadCompo
         title={Title}
         description={Description}
+        ogType={Type}
         ogUrl={Url}
         ogTitle={Title}
         ogDescription={Description}
