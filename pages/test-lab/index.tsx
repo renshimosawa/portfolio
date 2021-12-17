@@ -4,6 +4,7 @@ import HeadCompo from '../../components/domains/HeadCompo'
 
 // OGP
 const Title = '文久改正八戸御城下略図 on Google Map'
+const Type = 'artcle'
 const Description =
   '幕末(1862年くらい)の八戸城の古地図「文久改正八戸御城下略図」を現代の八戸市街にオーバーレイしました。'
 const Url = 'https://emotional-aomori.com/test-lab'
@@ -16,6 +17,7 @@ const testLab: React.FC = () => {
       <HeadCompo
         title={Title}
         description={Description}
+        ogType="artcle"
         ogUrl={Url}
         ogTitle={Title}
         ogDescription={Description}

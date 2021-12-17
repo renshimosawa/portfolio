@@ -28,6 +28,7 @@ export const getStaticProps = async () => {
 
 // OGP
 const Title = 'Emotional Aomori'
+const Type = 'artcle'
 const Description =
   '下沢廉のブログです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
 const Url = 'https://emotional-aomori.com/blog'
@@ -45,6 +46,7 @@ const Blog = ({ blog }) => {
       <HeadCompo
         title={Title}
         description={Description}
+        ogType={Type}
         ogUrl={Url}
         ogTitle={Title}
         ogDescription={Description}

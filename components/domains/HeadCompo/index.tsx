@@ -4,6 +4,7 @@ import React from 'react'
 export interface props {
   title: string
   description: string
+  ogType: string
   ogUrl: string
   ogTitle: string
   ogDescription: string
@@ -18,6 +19,7 @@ export interface props {
 const Title = 'Emotional Aomori'
 const Description =
   '下沢廉のポートフォリオサイトです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
+const Ogtype = 'website'
 const Url = 'https://emotional-aomori.com'
 const OgpImage =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
@@ -25,6 +27,7 @@ const OgpImage =
 const HeadCompo: React.FC<props> = ({
   title,
   description,
+  ogType,
   ogUrl,
   ogTitle,
   ogDescription,
@@ -36,24 +39,24 @@ const HeadCompo: React.FC<props> = ({
 }) => {
   return (
     <Head>
-      <title>{title}</title>
+      <title>{title ?? Title}</title>
       <link rel="icon" href="/favicon.png" />
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="description" content={description} />
+      <meta property="description" content={description ?? Description} />
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={ogUrl} />
-      <meta property="og:title" content={ogTitle} />
-      <meta property="og:description" content={ogDescription} />
-      <meta property="og:image" content={ogImage} />
-
+      <meta property="og:type" content={ogType ?? Ogtype} />
+      <meta property="og:url" content={ogUrl ?? Url} />
+      <meta property="og:title" content={ogTitle ?? Title} />
+      <meta property="og:description" content={ogDescription ?? Description} />
+      <meta property="og:image" content={ogImage ?? OgpImage} />
+      <meta property="fb:app_id" content="622490378799539" />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={twitterUrl} />
-      <meta property="twitter:title" content={twitterTitle} />
-      <meta property="twitter:description" content={twitterDescription} />
-      <meta property="twitter:image" content={twitterImage} />
+      <meta property="twitter:url" content={twitterUrl ?? Url} />
+      <meta property="twitter:title" content={twitterTitle ?? Title} />
+      <meta property="twitter:description" content={twitterDescription ?? Description} />
+      <meta property="twitter:image" content={twitterImage ?? OgpImage} />
       <link rel="shortcut icon" href="favicon.png" />
       <link rel="apple-touch-icon" href="favicon.png" />
       <link rel="icon" type="image/png" href="favicon.png" />

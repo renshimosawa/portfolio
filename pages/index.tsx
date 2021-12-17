@@ -31,6 +31,7 @@ const Home: React.FC = () => {
       <HeadCompo
         title={Title}
         description={Description}
+        ogType="website"
         ogUrl={Url}
         ogTitle={Title}
         ogDescription={Description}
