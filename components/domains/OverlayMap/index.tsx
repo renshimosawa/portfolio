@@ -4,40 +4,44 @@ import React from 'react'
 import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
+import Maps from '../maps'
 
 export type Props = {
   className?: string
 }
-
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
   width: '90vw',
   height: '58vh',
 }
-
 const center = {
   lat: 40.513103,
   lng: 141.4897,
 }
+const wideMap =
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=19651b33-029c-4d12-9c81-bc4334aabc1d'
+const zoomedMap =
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdatanarrow.svg?alt=media&token=6c137ba9-0ce3-4656-98f1-ee0d02ec248f'
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
   const [inputValue, setInputValue] = React.useState(0.5)
   const handleChange = (e) => {
     setInputValue(e.target.value)
   }
+  const [currentZoom, setCurrentZoom] = React.useState(16)
+  // const [map, setMap] = React.useState(null)
+  const handleClick = () => {
+    console.log(currentZoom)
+  }
+  const handleZoomChanged = (newZoom) => {
+    setCurrentZoom(newZoom)
+  }
   const OverlayData = () => {
     if (typeof window !== 'undefined') {
       const sw = new window.google.maps.LatLng(40.4942, 141.4666)
       const ne = new window.google.maps.LatLng(40.52, 141.513105)
       const bounds = new window.google.maps.LatLngBounds(sw, ne)
-      return (
-        <GroundOverlay
-          key={'url'}
-          url="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=19651b33-029c-4d12-9c81-bc4334aabc1d"
-          bounds={bounds}
-          opacity={inputValue}
-        />
-      )
+      return <GroundOverlay key={'url'} url={wideMap} bounds={bounds} opacity={inputValue} />
     }
   }
   return (
@@ -45,8 +49,15 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
       <LoadScriptNext googleMapsApiKey={key}>
         <GoogleMap
           mapContainerStyle={containerStyle}
+          // onLoad={(map) => {
+          //   setMap(map)
+          // }}
           center={center}
-          zoom={16}
+          zoom={currentZoom}
+          // ref={(googleMap) => setMap(googleMap)}
+          // onZoomChanged={() => {
+          //   console.log(getZoom())
+          // }}
           options={{
             gestureHandling: 'greedy',
             streetViewControl: false,
@@ -54,9 +65,12 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
             styles: MapStyles,
           }}
         >
+          {/* <Maps zoom={currentZoom} onZoomChanged={handleZoomChanged}> */}
           <OverlayData />
+          {/* </Maps> */}
         </GoogleMap>
       </LoadScriptNext>
+      <button onClick={handleClick}>Get Zoom</button>
       <p>古地図不透明度</p>
       <Box sx={{ width: '80vw' }}>
         <Slider
@@ -221,3 +235,6 @@ const MapStyles = [
 ]
 
 export default OverlayMap
+function getZoom(): any {
+  throw new Error('Function not implemented.')
+}
