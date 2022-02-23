@@ -10,7 +10,6 @@ $breakpointSp: 600px;
   }
 }
 
-
 @mixin sp {
   @media (max-width: ($breakpointSp)) {
     @content;

@@ -5,11 +5,10 @@ export type Props = {
   className?: string
   onSkillClick?: () => void
   label: string
-  style?: React.CSSProperties
 }
 
-const SkillButton: React.FC<Props> = ({ className, onSkillClick, label, style }) => (
-  <button className={cn(styles.default, className)} onClick={onSkillClick} style={style}>
+const SkillButton: React.FC<Props> = ({ className, onSkillClick, label }) => (
+  <button className={cn('w-100px,bg-sky-500/75', className)} onClick={onSkillClick}>
     <span>{label}</span>
   </button>
 )

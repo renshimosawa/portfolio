@@ -1,4 +1,4 @@
-@import "../styles/vars.scss";
+@import '../styles/vars.scss';
 .container {
   min-height: 100vh;
   min-width: 100vw;
@@ -17,7 +17,7 @@
     .catch {
       margin-bottom: 25%;
     }
-    @include sp{
+    @include sp {
       .backButton {
         margin: 30%;
       }
