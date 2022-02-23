@@ -51,29 +51,31 @@ const Home: React.FC = () => {
           onFirstClick={() => router.push('/portfolio')}
           onSecondClick={() => router.push('/blog')}
         />
+        {/* <Fade>
+          <Catch className={styles.catch} />
+        </Fade> */}
         <Fade>
+          <Profile className={styles.profile} onSkillClick={() => router.push('/skill-sheet')} />
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
+              marginTop: '5%',
             }}
           >
             <p style={{ textAlign: 'center' }}>今つくろうとしてるアプリの実験場</p>
             <SkillButton
+              className={styles.labButton}
               label="TESTLABへ"
-              style={{ textAlign: 'center' }}
+              style={{ textAlign: 'center', background: '#F86370' }}
               onSkillClick={() => router.push('/test-lab')}
             />
           </div>
-          <Catch className={styles.catch} />
         </Fade>
-        <Fade>
-          <Profile className={styles.profile} onSkillClick={() => router.push('/skill-sheet')} />
-        </Fade>
-        <Fade>
+        {/* <Fade>
           <BackButton className={styles.backButton} onBackClick={scrollToTop} />
-        </Fade>
+        </Fade> */}
       </main>
       <Fade>
         <Footer />

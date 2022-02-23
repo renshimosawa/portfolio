@@ -1,15 +1,15 @@
 .default {
-  width: 100px;
-  height: 35px;
+  width: 140px;
+  height: 40px;
   background: #535353;
   color: #fff;
   border: none;
-  border-radius: 15px;
+  border-radius: 25px;
   font-family: 'Josefin Sans';
   cursor: pointer;
   transition: 0.3s;
 }
-.default:hover{
+.default:hover {
   background: #747474;
   transition: 0.3s;
 }

@@ -1,4 +1,4 @@
-@import "../../../styles/vars.scss";
+@import '../../../styles/vars.scss';
 .default {
   width: 100vw;
   .container {
@@ -22,34 +22,34 @@
       font-size: medium;
       margin: 30px 0;
     }
-    .tableContainer{
+    .tableContainer {
       display: flex;
-      justify-content:center;
+      justify-content: center;
       margin: 40px 0;
-      @include sp{
-        padding:0 5vw;
+      @include sp {
+        padding: 0 5vw;
       }
       .table {
         text-align: left;
         margin: 30px 0 20px 0;
-        @include sp{
+        @include sp {
           font-size: 15px;
-          td{
+          td {
             vertical-align: top;
             height: 70px;
           }
-          .spBr{
+          .spBr {
             display: block;
           }
-          .date{
+          .date {
             padding-right: 10px;
             width: 30%;
           }
         }
-        .spBr{
+        .spBr {
           display: none;
         }
-        .date{
+        .date {
           padding-right: 20px;
         }
       }
@@ -66,7 +66,7 @@
           width: 28px;
         }
       }
-      .gmail{
+      .gmail {
         svg {
           width: 28px;
         }
@@ -74,6 +74,7 @@
     }
     .tooltips {
       position: absolute;
+      left: 48%;
     }
   }
 }
