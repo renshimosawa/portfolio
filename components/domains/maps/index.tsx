@@ -15,15 +15,15 @@ const center = {
   lng: 141.4897,
 }
 const Maps: React.FC<Props> = ({ zoom, children }) => {
-  const handleZoomChanged = () => {
-    onZoomChanged(getZoom()) //current zoom
-  }
+  // const handleZoomChanged = () => {
+  //   onZoomChanged(getZoom()) //current zoom
+  // }
   return (
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
       zoom={zoom}
-      onZoomChanged={handleZoomChanged}
+      // onZoomChanged={handleZoomChanged}
       options={{
         gestureHandling: 'greedy',
         streetViewControl: false,
