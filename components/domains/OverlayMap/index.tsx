@@ -70,7 +70,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
           {/* </Maps> */}
         </GoogleMap>
       </LoadScriptNext>
-      <button onClick={handleClick}>Get Zoom</button>
+      {/* <button onClick={handleClick}>Get Zoom</button> */}
       <p>古地図不透明度</p>
       <Box sx={{ width: '80vw' }}>
         <Slider

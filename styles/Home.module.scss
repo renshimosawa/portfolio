@@ -1,4 +1,4 @@
-@import "../styles/vars.scss";
+@import '../styles/vars.scss';
 .container {
   min-height: 100vh;
   min-width: 100vw;
@@ -15,12 +15,27 @@
       position: relative;
     }
     .catch {
-      margin-bottom: 25%;
+      margin-bottom: 10%;
     }
-    @include sp{
+    @include sp {
       .backButton {
         margin: 30%;
       }
+    }
+    .labButton {
+      width: 140px;
+      height: 40px;
+      background: #f86370;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-family: 'Josefin Sans';
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .labButton:hover {
+      opacity: 0.7;
+      transition: 0.3s;
     }
   }
 }

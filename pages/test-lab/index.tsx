@@ -1,6 +1,8 @@
 import React from 'react'
 import OverlayMap from '../../components/domains/OverlayMap'
 import HeadCompo from '../../components/domains/HeadCompo'
+import AppbarGray from '../../components/domains/AppbarGray'
+import router from 'next/router'
 
 // OGP
 const Title = '文久改正八戸御城下略図 on Google Map'
@@ -27,6 +29,7 @@ const testLab: React.FC = () => {
         twitterDescription={Description}
         twitterImage={OgpImage}
       />
+      <AppbarGray onClick={() => router.push('/')} />
       <h2 style={{ padding: '0 20px', textAlign: 'center' }}>
         文久改正八戸御城下略図 on Google Map
       </h2>
