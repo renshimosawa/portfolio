@@ -21,7 +21,8 @@
     "pages/blog/[id].tsx",
     "pages/_document.jsx",
     "src/lib/gtag.ts",
-    "pages/api/blog/[id]/ogp.ts"
+    "pages/api/blog/[id]/ogp.ts",
+    "components/domains/Top/Particle.js"
   ],
   "exclude": ["node_modules"]
 }
