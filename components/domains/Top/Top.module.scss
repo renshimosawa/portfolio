@@ -1,4 +1,4 @@
-@import "../../../styles/vars.scss";
+@import '../../../styles/vars.scss';
 .default {
   width: 100vw;
   height: 100vh;
@@ -9,7 +9,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
-    @include sp{
+    @include sp {
       margin: 0 auto;
     }
     .title {
@@ -17,7 +17,7 @@
       color: #fff;
       white-space: nowrap;
       margin-bottom: 10vh;
-      @include sp{
+      @include sp {
         margin-bottom: 80px;
       }
     }

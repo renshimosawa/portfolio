@@ -13,11 +13,24 @@ export const Snow = () => {
   }
 
   return (
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      loaded={particlesLoaded}
-      options={ParticlesSnow}
-    />
+    <div
+    // style={{
+    //   width: '100vw',
+    //   height: '100vh',
+    //   position: 'fixed',
+    //   top: 0,
+    //   left: 0,
+    //   overflow: 'hidden',
+    //   zIndex: 1,
+    // }}
+    >
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={ParticlesSnow}
+        style={{ position: 'absolute', top: 0, left: 0, zIndex: 1 }}
+      />
+    </div>
   )
 }
