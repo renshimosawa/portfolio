@@ -1,6 +1,7 @@
 {
   "fullScreen": {
-    "zIndex": 1
+    "zIndex": 1,
+    "enable": false
   },
   "interactivity": {
     "events": {
@@ -44,7 +45,7 @@
       "attract": {
         "rotate": {
           "x": 600,
-          "y": 1200
+          "y": 100
         }
       },
       "direction": "bottom",
