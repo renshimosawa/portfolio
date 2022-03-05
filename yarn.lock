@@ -1793,7 +1793,7 @@ etag@1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
 
-events@^3.0.0:
+events@^3.0.0, events@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
@@ -3567,6 +3567,13 @@ skmeans@0.9.7:
   version "0.9.7"
   resolved "https://registry.yarnpkg.com/skmeans/-/skmeans-0.9.7.tgz#72670cebb728508f56e29c0e10d11e623529ce5d"
   integrity sha512-hNj1/oZ7ygsfmPZ7ZfN5MUBRoGg1gtpnImuJBgLO0ljQ67DtJuiQaiYdS4lUA6s0KCwnPhGivtC/WRwIZLkHyg==
+
+snd-lib@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/snd-lib/-/snd-lib-1.0.1.tgz#c725b0b9dd58f84acac11b02480dc96936149f39"
+  integrity sha512-UxaCBcOdS8xuSFBQLCP/0yhxujiDCI3e7e+TqMfP1SQmBoRD7hkEVQ8EfRyaBPk4JMTiB5GPSMvXTVJb5wqE4Q==
+  dependencies:
+    events "^3.3.0"
 
 source-list-map@^2.0.0:
   version "2.0.1"

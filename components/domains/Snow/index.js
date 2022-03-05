@@ -4,8 +4,6 @@ import ParticlesSnow from './ts-particles-config-snow.json'
 export const Snow = () => {
   const particlesInit = (main) => {
     console.log(main)
-
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
   }
 
   const particlesLoaded = (container) => {
@@ -13,17 +11,7 @@ export const Snow = () => {
   }
 
   return (
-    <div
-    // style={{
-    //   width: '100vw',
-    //   height: '100vh',
-    //   position: 'fixed',
-    //   top: 0,
-    //   left: 0,
-    //   overflow: 'hidden',
-    //   zIndex: 1,
-    // }}
-    >
+    <div>
       <Particles
         id="tsparticles"
         init={particlesInit}
