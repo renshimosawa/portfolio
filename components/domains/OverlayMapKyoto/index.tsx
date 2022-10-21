@@ -42,6 +42,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
       return <GroundOverlay key={'url'} url={wideMap} bounds={bounds} opacity={inputValue} />
     }
   }
+
   return (
     <div className={cn(styles.default, className)}>
       <LoadScriptNext googleMapsApiKey={key}>
