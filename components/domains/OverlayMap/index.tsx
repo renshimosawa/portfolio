@@ -4,7 +4,7 @@ import React from 'react'
 import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
-// import Maps from '../maps's
+// import Maps from '../maps'
 
 export type Props = {
   className?: string
@@ -20,7 +20,6 @@ const center = {
 }
 const wideMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=19651b33-029c-4d12-9c81-bc4334aabc1d'
-
 const zoomedMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdatanarrow.svg?alt=media&token=6c137ba9-0ce3-4656-98f1-ee0d02ec248f'
 
