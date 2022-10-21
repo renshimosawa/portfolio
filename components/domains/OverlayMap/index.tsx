@@ -4,7 +4,7 @@ import React from 'react'
 import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
-// import Maps from '../maps's
+import Maps from '../maps'
 
 export type Props = {
   className?: string
