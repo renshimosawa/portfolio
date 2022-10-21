@@ -28,6 +28,9 @@ const testLabKyoto: React.FC = () => {
         twitterImage={OgpImage}
       />
       <AppbarGray onClick={() => router.push('/')} />
+      <h2 style={{ padding: '0 20px', textAlign: 'center' }}>
+        文久改正八戸御城下略図 on Google Map
+      </h2>
       <OverlayMapKyoto />
     </div>
   )
