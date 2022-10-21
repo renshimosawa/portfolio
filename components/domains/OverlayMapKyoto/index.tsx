@@ -26,7 +26,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
   const handleChange = (e) => {
     setInputValue(e.target.value)
   }
-  const [currentZoom, setCurrentZoom] = React.useState(14)
+  const [currentZoom, setCurrentZoom] = React.useState(15)
   // const [map, setMap] = React.useState(null)
   const handleClick = () => {
     console.log(currentZoom)
