@@ -12,7 +12,7 @@ export type Props = {
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
   width: '90vw',
-  height: '80vh',
+  height: '70vh',
 }
 const center = {
   lat: 35.017424,
