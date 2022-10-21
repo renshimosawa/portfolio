@@ -68,8 +68,14 @@ const Home: React.FC = () => {
             <SkillButton
               className={styles.labButton}
               label="TESTLABへ"
-              style={{ textAlign: 'center', background: '#F86370' }}
+              style={{ textAlign: 'center', background: '#F86370', marginBottom: '20px' }}
               onSkillClick={() => router.push('/test-lab')}
+            />
+            <SkillButton
+              className={styles.labButton}
+              label="TESTLAB2へ"
+              style={{ textAlign: 'center', background: '#F86370' }}
+              onSkillClick={() => router.push('/test-lab-kyoto')}
             />
           </div>
         </Fade>
