@@ -13,7 +13,7 @@ export type Props = {
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
   width: '90vw',
-  height: '70vh',
+  height: '70svh',
 }
 const center = {
   lat: 35.017424,
@@ -32,10 +32,10 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
   const handleChange = (e) => {
     setInputValue(e.target.value)
   }
-  const [isHeianSelected, setIsHeianSelected] = useState(false)
+  const [isHeianSelected, setIsHeianSelected] = useState(true)
   const [isKamakuraSelected, setIsKamakuraSelected] = useState(false)
   const [isSengokuSelected, setIsSengokuSelected] = useState(false)
-  const [isBakumatsuSelected, setIsBakumatsuSelected] = useState(true)
+  const [isBakumatsuSelected, setIsBakumatsuSelected] = useState(false)
 
   const HeianKyo = () => {
     if (typeof window !== 'undefined') {
