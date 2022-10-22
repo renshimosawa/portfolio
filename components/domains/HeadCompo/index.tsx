@@ -13,6 +13,7 @@ export interface props {
   twitterTitle: string
   twitterDescription: string
   twitterImage: string
+  noindex?: boolean
 }
 
 // OGP
@@ -36,6 +37,7 @@ const HeadCompo: React.FC<props> = ({
   twitterTitle,
   twitterDescription,
   twitterImage,
+  noindex,
 }) => {
   return (
     <Head>
@@ -57,6 +59,7 @@ const HeadCompo: React.FC<props> = ({
       <meta property="twitter:title" content={twitterTitle ?? Title} />
       <meta property="twitter:description" content={twitterDescription ?? Description} />
       <meta property="twitter:image" content={twitterImage ?? OgpImage} />
+      {noindex && <meta name="robots" content="noindex" />}
       <link rel="shortcut icon" href="favicon.png" />
       <link rel="apple-touch-icon" href="favicon.png" />
       <link rel="icon" type="image/png" href="favicon.png" />
