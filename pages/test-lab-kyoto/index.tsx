@@ -26,6 +26,7 @@ const testLabKyoto: React.FC = () => {
         twitterTitle={Title}
         twitterDescription={Description}
         twitterImage={OgpImage}
+        noindex
       />
       <AppbarGray onClick={() => router.push('/')} />
       <OverlayMapKyoto />
