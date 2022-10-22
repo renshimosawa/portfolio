@@ -13,7 +13,7 @@ export type Props = {
   onBakumatsuClick?: () => void
 }
 
-const HomeBar: React.FC<Props> = ({
+const SwitchBar: React.FC<Props> = ({
   className,
   style,
   onHeianClick: onHeianClick,
@@ -24,13 +24,13 @@ const HomeBar: React.FC<Props> = ({
   return (
     <div className={cn(s.default, className)} style={style}>
       <div className={s.container}>
-        <SkillButton label="平安" onSkillClick={onHeianClick} />
-        <SkillButton label="鎌倉" onSkillClick={onKamakuraClick} />
-        <SkillButton label="戦国" onSkillClick={onSengokuClick} />
-        <SkillButton label="幕末" onSkillClick={onBakumatsuClick} />
+        <SkillButton label="平安" onSkillClick={onHeianClick} style={{ margin: '10px' }} />
+        <SkillButton label="鎌倉" onSkillClick={onKamakuraClick} style={{ margin: '10px' }} />
+        <SkillButton label="戦国" onSkillClick={onSengokuClick} style={{ margin: '10px' }} />
+        <SkillButton label="幕末" onSkillClick={onBakumatsuClick} style={{ margin: '10px' }} />
       </div>
     </div>
   )
 }
 
-export default HomeBar
+export default SwitchBar
