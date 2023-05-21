@@ -4,7 +4,6 @@ import AppbarGray from '../../components/domains/AppbarGray'
 import Top from '../../components/domains/Top'
 import { useRouter } from 'next/router'
 import HeadCompo from '../../components/domains/HeadCompo'
-import BackButton from '../../components/domains/BackButton'
 import { Fade } from 'react-awesome-reveal'
 import Footer from '../../components/domains/Footer'
 import Link from 'next/link'
@@ -62,7 +61,6 @@ const Blog = ({ blog }) => {
         </div>
       </Fade>
       <Fade>
-        <BackButton onBackClick={scrollToTop} />
         <Footer />
       </Fade>
     </div>
