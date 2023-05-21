@@ -62,31 +62,11 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   }
 }
 
-// OGP
-const Type = 'artcle'
-const Description =
-  '下沢廉のブログです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
-const OgpImage =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
-
 const BlogId: NextPage<Props> = ({ blog, title }) => {
   const router = useRouter()
-  const Url = 'https://emotional-aomori.com/' + router.query
   return (
     <div className={styles.default}>
-      <HeadCompo
-        title={title}
-        description={Description}
-        ogType={Type}
-        ogUrl={Url}
-        ogTitle={title}
-        ogDescription={Description}
-        ogImage={OgpImage}
-        twitterUrl={Url}
-        twitterTitle={title}
-        twitterDescription={Description}
-        twitterImage={OgpImage}
-      />
+      <HeadCompo title={title} />
       <AppbarGray onClick={() => router.push('/')} />
       <div className={styles.container}>
         <div className={styles.contents}>

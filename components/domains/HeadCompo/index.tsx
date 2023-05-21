@@ -1,44 +1,33 @@
 import Head from 'next/head'
+import router, { useRouter } from 'next/router'
+import { ParsedUrlQuery } from 'querystring'
 import React from 'react'
 
 export interface props {
-  title: string
-  description: string
-  ogType: string
-  ogUrl: string
-  ogTitle: string
-  ogDescription: string
-  ogImage: string
-  twitterUrl: string
-  twitterTitle: string
-  twitterDescription: string
-  twitterImage: string
+  title?: string
+  description?: string
+  ogUrl?: string
+  ogImage?: string
   noindex?: boolean
+  currentPathId?: string
 }
 
 // OGP
-const Title = 'Emotional Aomori'
-const Description =
-  '下沢廉のポートフォリオサイトです。Next.jsで作りました。新卒で入社した会社を1年未満で辞めて、フリーランスの動画編集者などを経験しましたが、今はフロントエンドエンジニアをしています。'
-const Ogtype = 'website'
-const Url = 'https://emotional-aomori.com'
+const Title = 'Historedge.com'
+const Description = '歴史にフォーカスした事業をするRen Shimosawaのポートフォリオサイトです。'
 const OgpImage =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP-100.jpg?alt=media&token=607b69df-42b7-47fd-b5fe-11b042b6f16f'
+const domain = 'https://historedge.com'
 
 const HeadCompo: React.FC<props> = ({
   title,
   description,
-  ogType,
   ogUrl,
-  ogTitle,
-  ogDescription,
   ogImage,
-  twitterUrl,
-  twitterTitle,
-  twitterDescription,
-  twitterImage,
   noindex,
+  currentPathId,
 }) => {
+  const currentPath = domain + currentPathId + '/'
   return (
     <Head>
       <title>{title ?? Title}</title>
@@ -47,18 +36,19 @@ const HeadCompo: React.FC<props> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta property="description" content={description ?? Description} />
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content={ogType ?? Ogtype} />
-      <meta property="og:url" content={ogUrl ?? Url} />
-      <meta property="og:title" content={ogTitle ?? Title} />
-      <meta property="og:description" content={ogDescription ?? Description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={ogUrl ?? currentPath} />
+      <meta property="og:title" content={title ?? Title} />
+      <meta property="og:description" content={description ?? Description} />
       <meta property="og:image" content={ogImage ?? OgpImage} />
       <meta property="fb:app_id" content="622490378799539" />
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={twitterUrl ?? Url} />
-      <meta property="twitter:title" content={twitterTitle ?? Title} />
-      <meta property="twitter:description" content={twitterDescription ?? Description} />
-      <meta property="twitter:image" content={twitterImage ?? OgpImage} />
+      <meta property="twitter:url" content={ogUrl ?? currentPath} />
+      <meta property="twitter:title" content={title ?? Title} />
+      <meta property="twitter:description" content={description ?? Description} />
+      <meta property="twitter:image" content={ogImage ?? OgpImage} />
+      <link rel="canonical" href={currentPath} />
       {noindex && <meta name="robots" content="noindex" />}
       <link rel="shortcut icon" href="favicon.png" />
       <link rel="apple-touch-icon" href="favicon.png" />

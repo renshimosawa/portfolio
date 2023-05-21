@@ -1,10 +1,16 @@
-@import "../../../styles/vars.scss";
+@import '../../../styles/vars.scss';
 .default {
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
+  @include sp {
+    height: 50vh;
+  }
   .background {
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
+    @include sp {
+      height: 50vh;
+    }
     -webkit-mask-image: -webkit-linear-gradient(
       -90deg,
       rgba(0, 0, 0, 1) 80%,
