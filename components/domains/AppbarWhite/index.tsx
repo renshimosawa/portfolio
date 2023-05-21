@@ -4,7 +4,6 @@ import cn from 'classnames'
 export type Props = {
   className?: string
   onClick?: () => void
-  // ↑HTMLタグ何でも入れられるよ
 }
 
 const AppbarWhite: React.FC<Props> = ({ onClick, className }) => (

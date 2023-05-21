@@ -1,16 +1,20 @@
 @import '../../../styles/vars.scss';
 .default {
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
+  @include sp {
+    height: 50vh;
+  }
   .container {
     position: absolute;
-    top: 50vh;
+    top: 35vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
     @include sp {
       margin: 0 auto;
+      top: 30vh;
     }
     .title {
       font-size: xx-large;

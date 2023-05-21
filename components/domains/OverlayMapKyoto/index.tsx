@@ -5,7 +5,6 @@ import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import SwitchBar from '../../bases/SwitchBar'
-import router from 'next/router'
 
 export type Props = {
   className?: string
@@ -22,7 +21,7 @@ const center = {
 const HeianMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kyoto.png?alt=media&token=b688df04-fee8-4cae-a631-8f1ed478a329'
 const KamakuraMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/20120208090958ac2.jpeg?alt=media&token=c501a95e-fc64-4957-afee-bb560946d0d2'
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kamakura.png?alt=media&token=eecd51a3-5c7b-4dd9-8723-99e9c82a8a56'
 const SengokuMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/EjgoDuQVcAA73u4.jpeg?alt=media&token=1e78a4e6-5fe1-4b18-a359-36129e790169'
 const BakumatsuMap = `https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/01.jpeg?alt=media&token=3dcaf6d1-0058-4cd0-aad7-42d99463c6da`
@@ -32,10 +31,22 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
   const handleChange = (e) => {
     setInputValue(e.target.value)
   }
-  const [isHeianSelected, setIsHeianSelected] = useState(true)
-  const [isKamakuraSelected, setIsKamakuraSelected] = useState(false)
-  const [isSengokuSelected, setIsSengokuSelected] = useState(false)
-  const [isBakumatsuSelected, setIsBakumatsuSelected] = useState(false)
+  const [buttonState, setButtonState] = useState([true, false, false, false])
+
+  const handleButtonClick = (buttonIndex) => {
+    const updatedButtonState = buttonState.map((state, index) => {
+      if (index === buttonIndex) {
+        return true
+      } else if (index < buttonIndex) {
+        return false
+      } else if (index > buttonIndex) {
+        return false
+      } else {
+        return state
+      }
+    })
+    setButtonState(updatedButtonState)
+  }
 
   const HeianKyo = () => {
     if (typeof window !== 'undefined') {
@@ -48,7 +59,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
   const KamakuraCapital = () => {
     if (typeof window !== 'undefined') {
       const ne = new window.google.maps.LatLng(35.045947117938745, 135.81440515491875)
-      const sw = new window.google.maps.LatLng(34.932881534339224, 135.71126141863022)
+      const sw = new window.google.maps.LatLng(34.932881534339224, 135.71000001)
       const bounds = new window.google.maps.LatLngBounds(sw, ne)
       return <GroundOverlay key={'url'} url={KamakuraMap} bounds={bounds} opacity={inputValue} />
     }
@@ -84,10 +95,10 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
             styles: MapStyles,
           }}
         >
-          {isHeianSelected && <HeianKyo />}
-          {isKamakuraSelected && <KamakuraCapital />}
-          {isSengokuSelected && <SengokuCapital />}
-          {isBakumatsuSelected && <BakumatsuCapital />}
+          {buttonState[0] && <HeianKyo />}
+          {buttonState[1] && <KamakuraCapital />}
+          {buttonState[2] && <SengokuCapital />}
+          {buttonState[3] && <BakumatsuCapital />}
         </GoogleMap>
       </LoadScriptNext>
       <Box sx={{ width: '80vw' }}>
@@ -102,10 +113,14 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
         />
       </Box>
       <SwitchBar
-        onHeianClick={() => setIsHeianSelected((prev) => !prev)}
-        onKamakuraClick={() => setIsKamakuraSelected((prev) => !prev)}
-        onSengokuClick={() => setIsSengokuSelected((prev) => !prev)}
-        onBakumatsuClick={() => setIsBakumatsuSelected((prev) => !prev)}
+        onHeianClick={() => handleButtonClick(0)}
+        disabledKyoto={buttonState[0]}
+        onKamakuraClick={() => handleButtonClick(1)}
+        disabledKamakura={buttonState[1]}
+        onSengokuClick={() => handleButtonClick(2)}
+        disabledSengoku={buttonState[2]}
+        onBakumatsuClick={() => handleButtonClick(3)}
+        disabledBakumatsu={buttonState[3]}
       />
     </div>
   )

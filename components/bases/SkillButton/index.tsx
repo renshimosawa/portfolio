@@ -6,10 +6,16 @@ export type Props = {
   onSkillClick?: () => void
   label: string
   style?: React.CSSProperties
+  disabled?: boolean
 }
 
-const SkillButton: React.FC<Props> = ({ className, onSkillClick, label, style }) => (
-  <button className={cn(styles.default, className)} onClick={onSkillClick} style={style}>
+const SkillButton: React.FC<Props> = ({ className, onSkillClick, label, style, disabled }) => (
+  <button
+    className={cn(styles.default, className)}
+    onClick={onSkillClick}
+    style={style}
+    disabled={disabled}
+  >
     <span>{label}</span>
   </button>
 )

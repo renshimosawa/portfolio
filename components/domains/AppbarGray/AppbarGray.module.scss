@@ -1,8 +1,9 @@
-@import "../../../styles/vars.scss";
+@import '../../../styles/vars.scss';
 .default {
-  height: 50px;
+  height: 80px;
   display: flex;
   align-items: center;
+  padding: 15px 0;
   .button {
     background: none;
     border: none;

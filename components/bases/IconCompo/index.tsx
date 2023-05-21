@@ -28,9 +28,9 @@ const IconCompo: React.FC<Props> = ({ type, className, url }) => {
   const SvgComponent = svgMap[type]
   return (
     <div className={cn(styles.default, className)}>
-      <a href={url}>
-        <SvgComponent />
-      </a>
+      {/* <a href={url}> */}
+      <SvgComponent />
+      {/* </a> */}
     </div>
   )
 }

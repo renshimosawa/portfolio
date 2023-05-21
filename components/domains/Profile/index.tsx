@@ -82,16 +82,16 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
   return (
     <div className={cn(styles.default, className)}>
       <div className={styles.container}>
-        <p className={styles.name}>Ren Shimosawa</p>
+        <h2 className={styles.name}>Ren Shimosawa</h2>
         <div className={styles.imgContainer}>
-          <img src="profile.jpg"></img>
+          <img src="face-icon.svg" alt="Ren Shimosawaのアイコン"></img>
         </div>
         <p className={styles.ocupation}>
-          グラフィックデザイナー
-          <br />
           フロントエンドエンジニア
+          <br />
+          グラフィックデザイナー
         </p>
-        <SkillButton onSkillClick={onSkillClick} label="Skill Sheet" />
+        {/* <SkillButton onSkillClick={onSkillClick} label="Skill Sheet" /> */}
         <div className={styles.tableContainer}>
           <table className={styles.table}>
             <tr>
@@ -130,50 +130,45 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
         </div>
 
         <div className={styles.linkContainer}>
-          <Link href="https://www.facebook.com/ren.shimosawa">
-            <a
-              data-tip="Open Facebook"
-              target="_blank"
-              onClick={ClickFacebook}
-              className={styles.facebookIcon}
-            >
-              <IconButton className={styles.icon} type="facebook" />
-            </a>
-          </Link>
+          <a
+            href="https://www.facebook.com/ren.shimosawa"
+            data-tip="Facebookを開く"
+            target="_blank"
+            onClick={ClickFacebook}
+            className={styles.facebookIcon}
+          >
+            <IconButton className={styles.icon} type="facebook" />
+          </a>
 
-          <Link href="https://twitter.com/ren_shimosawa">
-            <a
-              data-tip="Open Twitter"
-              target="_blank"
-              onClick={ClickTwitter}
-              className={styles.twitterIcon}
-            >
-              <IconButton className={styles.icon} type="twitter" />
-            </a>
-          </Link>
+          <a
+            href="https://twitter.com/ren_shimosawa"
+            data-tip="Twitterを開く"
+            target="_blank"
+            onClick={ClickTwitter}
+            className={styles.twitterIcon}
+          >
+            <IconButton className={styles.icon} type="twitter" />
+          </a>
 
-          <Link href="https://github.com/renshimosawa">
-            <a
-              data-tip="Open Github"
-              target="_blank"
-              onClick={ClickGithub}
-              className={styles.githubIcon}
-            >
-              <IconButton className={styles.icon} type="github" />
-            </a>
-          </Link>
+          <a
+            href="https://github.com/renshimosawa"
+            data-tip="Githubを開く"
+            target="_blank"
+            onClick={ClickGithub}
+            className={styles.githubIcon}
+          >
+            <IconButton className={styles.icon} type="github" />
+          </a>
 
-          <div className={styles.gmail} data-tip="Copy Clipboard">
-            <CopyToClipboard text={'ren.shimosawa.cc@gmail.com'}>
-              <IconButton className={styles.gmailIcon} type="gmail" onClick={toggleDisplay} />
-            </CopyToClipboard>
-          </div>
-
-          <Link href="https://zenn.dev/renshimosawa">
-            <a data-tip="Open Zenn" target="_blank" onClick={ClickZenn} className={styles.zennIcon}>
-              <IconButton className={styles.icon} type="zenn" />
-            </a>
-          </Link>
+          <a
+            href="https://zenn.dev/renshimosawa"
+            data-tip="Zennを開く"
+            target="_blank"
+            onClick={ClickZenn}
+            className={styles.zennIcon}
+          >
+            <IconButton className={styles.icon} type="zenn" />
+          </a>
         </div>
         <ReactTooltip border={true} arrowColor="none" place="bottom" effect="solid" type="info" />
         <Tooltips

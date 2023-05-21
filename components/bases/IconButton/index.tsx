@@ -13,9 +13,9 @@ export type IconType = 'facebook' | 'doubleUp' | 'github' | 'gmail' | 'twitter' 
 
 const IconButton: React.FC<Props> = ({ className, style, type, onClick }) => (
   <div className={cn(styles.default, className)} style={style}>
-    <button className={styles.button} onClick={onClick}>
-      <Icon type={type} />
-    </button>
+    {/* <button className={styles.button} onClick={onClick}> */}
+    <Icon type={type} />
+    {/* </button> */}
   </div>
 )
 
