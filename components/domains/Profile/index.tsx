@@ -94,38 +94,40 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
         {/* <SkillButton onSkillClick={onSkillClick} label="Skill Sheet" /> */}
         <div className={styles.tableContainer}>
           <table className={styles.table}>
-            <tr>
-              <td className={styles.date}>2020/02～</td>
-              <td>
-                【開業】
-                <br className={styles.spBr} />
-                動画編集(Emotional Aomori)
-              </td>
-            </tr>
-            <tr>
-              <td className={styles.date}>2020/10～</td>
-              <td>
-                【Quantum Box.Inc】
-                <br className={styles.spBr} />
-                グラフィックデザイナー
-              </td>
-            </tr>
-            <tr>
-              <td className={styles.date}>2021/01～</td>
-              <td>
-                【Quantum Box.Inc】
-                <br className={styles.spBr} />
-                フロントエンドエンジニア
-              </td>
-            </tr>
-            <tr>
-              <td className={styles.date}>2021/10～</td>
-              <td>
-                【freee株式会社】
-                <br className={styles.spBr} />
-                フロントエンドエンジニア
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className={styles.date}>2020/02～</td>
+                <td>
+                  【開業】
+                  <br className={styles.spBr} />
+                  動画編集(Emotional Aomori)
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.date}>2020/10～</td>
+                <td>
+                  【Quantum Box.Inc】
+                  <br className={styles.spBr} />
+                  グラフィックデザイナー
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.date}>2021/01～</td>
+                <td>
+                  【Quantum Box.Inc】
+                  <br className={styles.spBr} />
+                  フロントエンドエンジニア
+                </td>
+              </tr>
+              <tr>
+                <td className={styles.date}>2021/10～</td>
+                <td>
+                  【freee株式会社】
+                  <br className={styles.spBr} />
+                  フロントエンドエンジニア
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
 
@@ -170,7 +172,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             <IconButton className={styles.icon} type="zenn" />
           </a>
         </div>
-        <ReactTooltip border={true} arrowColor="none" place="bottom" effect="solid" type="info" />
+        {/* <ReactTooltip border={true} arrowColor="none" place="bottom" effect="solid" type="info" /> */}
         <Tooltips
           label="メールアドレスをコピーしました"
           className={styles.tooltips}
