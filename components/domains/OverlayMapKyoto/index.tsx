@@ -50,7 +50,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
 
   const HeianKyo = () => {
     if (typeof window !== 'undefined') {
-      const nsew = { north: 35.029812, south: 34.97637, east: 135.771863, west: 135.71348769383832 }
+      const nsew = { north: 35.029812, south: 34.97637, east: 135.7715, west: 135.71348769383832 }
       return <GroundOverlay key={'url'} url={HeianMap} bounds={nsew} opacity={inputValue} />
     }
   }
@@ -111,8 +111,8 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
           zoom={15}
           options={{
             gestureHandling: 'greedy',
-            streetViewControl: false,
-            fullscreenControl: false,
+            streetViewControl: true,
+            fullscreenControl: true,
             styles: MapStyles,
           }}
         >
