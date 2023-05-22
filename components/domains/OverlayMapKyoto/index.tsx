@@ -1,7 +1,7 @@
 import styles from './OverlayMapKyoto.module.scss'
 import cn from 'classnames'
-import React, { useState } from 'react'
-import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api'
+import React, { useState, useEffect } from 'react'
+import { GoogleMap, LoadScriptNext, GroundOverlay, Marker } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import SwitchBar from '../../bases/SwitchBar'
@@ -88,6 +88,20 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
     }
   }
 
+  const [currentLocation, setCurrentLocation] = useState(null)
+  useEffect(() => {
+    // 現在地を取得する処理
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords
+        setCurrentLocation({ lat: latitude, lng: longitude })
+      },
+      (error) => {
+        console.error('Error getting current location:', error)
+      },
+    )
+  }, [])
+
   return (
     <div className={cn(styles.default, className)}>
       <LoadScriptNext googleMapsApiKey={key}>
@@ -102,6 +116,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
             styles: MapStyles,
           }}
         >
+          {currentLocation && <Marker position={currentLocation} />}
           {buttonState[0] && <HeianKyo />}
           {buttonState[1] && <KamakuraCapital />}
           {buttonState[2] && <SengokuCapital />}

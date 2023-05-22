@@ -1,10 +1,9 @@
 import styles from './OverlayMap.module.scss'
 import cn from 'classnames'
-import React from 'react'
-import { GoogleMap, LoadScriptNext, GroundOverlay } from '@react-google-maps/api'
+import React, { useEffect, useState } from 'react'
+import { GoogleMap, LoadScriptNext, GroundOverlay, Marker } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
-// import Maps from '../maps'
 
 export type Props = {
   className?: string
@@ -42,6 +41,20 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
       return <GroundOverlay key={'url'} url={wideMap} bounds={nsew} opacity={inputValue} />
     }
   }
+
+  const [currentLocation, setCurrentLocation] = useState(null)
+  useEffect(() => {
+    // 現在地を取得する処理
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords
+        setCurrentLocation({ lat: latitude, lng: longitude })
+      },
+      (error) => {
+        console.error('Error getting current location:', error)
+      },
+    )
+  }, [])
   return (
     <div className={cn(styles.default, className)}>
       <LoadScriptNext googleMapsApiKey={key}>
@@ -63,6 +76,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
             styles: MapStyles,
           }}
         >
+          {currentLocation && <Marker position={currentLocation} />}
           {/* <Maps zoom={currentZoom} onZoomChanged={handleZoomChanged}> */}
           <OverlayData />
           {/* </Maps> */}
