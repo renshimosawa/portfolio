@@ -50,34 +50,41 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
 
   const HeianKyo = () => {
     if (typeof window !== 'undefined') {
-      const ne = new window.google.maps.LatLng(35.029812, 135.771863)
-      const sw = new window.google.maps.LatLng(34.97637, 135.71348769383832)
-      const bounds = new window.google.maps.LatLngBounds(sw, ne)
-      return <GroundOverlay key={'url'} url={HeianMap} bounds={bounds} opacity={inputValue} />
+      const nsew = { north: 35.029812, south: 34.97637, east: 135.771863, west: 135.71348769383832 }
+      return <GroundOverlay key={'url'} url={HeianMap} bounds={nsew} opacity={inputValue} />
     }
   }
   const KamakuraCapital = () => {
     if (typeof window !== 'undefined') {
-      const ne = new window.google.maps.LatLng(35.045947117938745, 135.81440515491875)
-      const sw = new window.google.maps.LatLng(34.932881534339224, 135.71000001)
-      const bounds = new window.google.maps.LatLngBounds(sw, ne)
-      return <GroundOverlay key={'url'} url={KamakuraMap} bounds={bounds} opacity={inputValue} />
+      const nsew = {
+        north: 35.045947117938745,
+        south: 34.932881534339224,
+        east: 135.81440515491875,
+        west: 135.71000001,
+      }
+      return <GroundOverlay key={'url'} url={KamakuraMap} bounds={nsew} opacity={inputValue} />
     }
   }
   const SengokuCapital = () => {
     if (typeof window !== 'undefined') {
-      const ne = new window.google.maps.LatLng(35.04301067712829, 135.77421551633472)
-      const sw = new window.google.maps.LatLng(34.990561167379454, 135.73505873293402)
-      const bounds = new window.google.maps.LatLngBounds(sw, ne)
-      return <GroundOverlay key={'url'} url={SengokuMap} bounds={bounds} opacity={inputValue} />
+      const nsew = {
+        north: 35.04301067712829,
+        south: 34.990561167379454,
+        east: 135.77421551633472,
+        west: 135.73505873293402,
+      }
+      return <GroundOverlay key={'url'} url={SengokuMap} bounds={nsew} opacity={inputValue} />
     }
   }
   const BakumatsuCapital = () => {
     if (typeof window !== 'undefined') {
-      const ne = new window.google.maps.LatLng(35.05650258346137, 135.79073827270742)
-      const sw = new window.google.maps.LatLng(34.96941497354437, 135.72357997849176)
-      const bounds = new window.google.maps.LatLngBounds(sw, ne)
-      return <GroundOverlay key={'url'} url={BakumatsuMap} bounds={bounds} opacity={inputValue} />
+      const nsew = {
+        north: 35.05650258346137,
+        south: 34.96941497354437,
+        east: 135.79073827270742,
+        west: 135.72357997849176,
+      }
+      return <GroundOverlay key={'url'} url={BakumatsuMap} bounds={nsew} opacity={inputValue} />
     }
   }
 
