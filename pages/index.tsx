@@ -14,7 +14,7 @@ import VideoCard from '../components/domains/VideoItem'
 // OGP
 
 const OgpImage =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP.png?alt=media&token=ade42b67-3b99-4e49-b251-f9555117276f'
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/OGP-100.jpg?alt=media&token=607b69df-42b7-47fd-b5fe-11b042b6f16f'
 
 const Home: React.FC = () => {
   const router = useRouter()
