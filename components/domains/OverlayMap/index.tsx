@@ -8,11 +8,11 @@ import Slider from '@mui/material/Slider'
 export type Props = {
   className?: string
 }
-const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
-const containerStyle = {
-  width: '90vw',
-  height: '58vh',
-}
+// const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
+// const containerStyle = {
+//   width: '90vw',
+//   height: '58vh',
+// }
 const center = {
   lat: 40.513103,
   lng: 141.4897,
