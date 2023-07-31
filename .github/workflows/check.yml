@@ -1,0 +1,26 @@
+name: PR Commit Message Check
+
+on:
+  pull_request:
+    branches:
+      - test-for-main
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  check_pr_commit_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Check for specific string in commit messages
+        run: |
+          # 特定の文字列をチェックするロジックをここに書く
+          # 以下は例として、"特定の文字列"がコミットメッセージに含まれていたらエラーとする例です
+          git log --pretty=format:"%s" ${{ github.base_ref }}..${{ github.head_ref }} | grep -q "特定の文字列" && {
+            echo "Error: PR contains the specific string in commit messages."
+            exit 1
+          }
