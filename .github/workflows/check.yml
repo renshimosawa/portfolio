@@ -16,13 +16,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Check for specific string in commit messages
+      - name: Check for specific string in file changes
         run: |
           # 特定の文字列をチェックするロジックをここに書く
-          # 以下は例として、"特定の文字列"がコミットメッセージに含まれていたらエラーとする例です
-          if git log --pretty=format:"%s" ${{ github.base_ref }}..${{ github.head_ref }} | grep -q "特定の文字列"; then
-            echo "Error: PR contains the specific string in commit messages. Merge is blocked."
+          # 以下は例として、"特定の文字列"が変更されたファイルに含まれていたらエラーとする例です
+          if git diff --name-only ${{ github.base_ref }}..${{ github.head_ref }} | xargs grep -q "特定の文字列"; then
+            echo "Error: PR contains the specific string in file changes. Merge is blocked."
             exit 1
           else
-            echo "PR commit messages do not contain the specific string. Merge is allowed."
+            echo "PR file changes do not contain the specific string. Merge is allowed."
           fi
