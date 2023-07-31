@@ -3,7 +3,7 @@ name: PR Commit Message Check
 on:
   pull_request:
     branches:
-      - test-for-main
+      - main
     types:
       - opened
       - synchronize
