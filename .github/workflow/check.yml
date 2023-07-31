@@ -20,7 +20,7 @@ jobs:
         run: |
           # 特定の文字列をチェックするロジックをここに書く
           # 以下は例として、"特定の文字列"がコミットメッセージに含まれていたらエラーとする例です
-          git log --pretty=format:"%s" ${{ github.base_ref }}..${{ github.head_ref }} | grep -q "特定の文字列" && {
+          git log --pretty=format:"%s" ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} | grep -q "特定の文字列" && {
             echo "Error: PR contains the specific string in commit messages."
             exit 1
           }
