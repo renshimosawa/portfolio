@@ -1,9 +1,8 @@
 html,
 body {
   margin: 0;
-  font-family: Josefin Sans, Hiragino Kaku Gothic ProN, Roboto, -apple-system,
-    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family: Josefin Sans, Hiragino Kaku Gothic ProN, Roboto, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -12,6 +11,8 @@ body::-webkit-scrollbar {
 a {
   color: inherit;
   text-decoration: none;
+  opacity: 1;
+  transition: 0.2s;
 }
 
 * {
@@ -22,6 +23,8 @@ button :hover {
 }
 a :hover {
   cursor: pointer;
+  opacity: 0.8;
+  transition: 0.2s;
 }
 p {
   font-family: 'Josefin Sans', 'Hiragino Kaku Gothic ProN';
