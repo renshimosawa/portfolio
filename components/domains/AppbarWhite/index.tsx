@@ -7,11 +7,11 @@ export type Props = {
 }
 
 const AppbarWhite: React.FC<Props> = ({ onClick, className }) => (
-  <div className={cn(styles.default, className)}>
+  <header className={cn(styles.default, className)}>
     <button onClick={onClick} className={styles.button} aria-label="Logo">
       <img className={styles.logo} src="/logo_white.svg" width={250} height={50} alt="Historedge" />
     </button>
-  </div>
+  </header>
 )
 
 export default AppbarWhite
