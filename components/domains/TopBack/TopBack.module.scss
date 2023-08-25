@@ -5,11 +5,26 @@
   @include sp {
     height: 50vh;
   }
-  .background {
+  .backgroundPc {
     width: 100vw;
     height: 70vh;
     @include sp {
+      display: none;
+    }
+    -webkit-mask-image: -webkit-linear-gradient(
+      -90deg,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 1) 0%,
+      transparent
+    );
+  }
+  .backgroundSp {
+    @include pc {
+      display: none;
+    }
+    @include sp {
       height: 50vh;
+      display: block;
     }
     -webkit-mask-image: -webkit-linear-gradient(
       -90deg,

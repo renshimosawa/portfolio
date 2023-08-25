@@ -33,25 +33,32 @@
       .table {
         text-align: left;
         margin: 30px 0 20px 0;
+        .spBr {
+          display: none;
+        }
+        .date {
+          padding-right: 20px;
+        }
+        .strong {
+          font-weight: bold;
+        }
         @include sp {
           font-size: 15px;
+
           td {
             vertical-align: top;
             height: 70px;
+            .strong {
+              font-weight: bold;
+            }
           }
           .spBr {
             display: block;
           }
           .date {
             padding-right: 10px;
-            width: 30%;
+            // width: 30%;
           }
-        }
-        .spBr {
-          display: none;
-        }
-        .date {
-          padding-right: 20px;
         }
       }
     }
