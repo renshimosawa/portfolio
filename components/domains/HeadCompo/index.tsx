@@ -27,7 +27,7 @@ const HeadCompo: React.FC<props> = ({
   noindex,
   currentPathId,
 }) => {
-  const currentPath = domain + currentPathId + '/'
+  const currentPath = domain + currentPathId
   return (
     <Head>
       <title>{title ?? Title}</title>
@@ -57,16 +57,16 @@ const HeadCompo: React.FC<props> = ({
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
-        rel="preload"
+        rel="stylesheet"
         as="font"
       />
       <link
-        rel="preload"
+        rel="stylesheet"
         as="font"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       />
       <link
-        rel="preload"
+        rel="preconnect"
         as="font"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
