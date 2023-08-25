@@ -34,6 +34,7 @@ const HeadCompo: React.FC<props> = ({
       <link rel="icon" href="/site-favicon.png" />
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content={description ?? Description} />
       <meta property="description" content={description ?? Description} />
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -56,13 +57,19 @@ const HeadCompo: React.FC<props> = ({
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap"
-        rel="stylesheet"
+        rel="preload"
+        as="font"
       />
       <link
-        rel="stylesheet"
+        rel="preload"
+        as="font"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+      <link
+        rel="preload"
+        as="font"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
     </Head>
   )
 }

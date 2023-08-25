@@ -14,7 +14,7 @@ const VideoItem: React.FC<Props> = ({ className, url, label, style, labelStyle }
   return (
     <Card className={cn(styles.default, className)} style={style}>
       <div className={styles.container}>
-        <iframe src={url} className={styles.item} frameBorder="0" title="YouTube video player" />
+        <iframe src={url} className={styles.item} title="YouTube video player" loading="lazy" />
       </div>
       <p className={styles.label} style={labelStyle}>
         {label}

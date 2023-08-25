@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
           {/* Google Analytics */}
           {existsGaId && (
             <>
-              <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+              {/* <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} /> */}
               <script
                 dangerouslySetInnerHTML={{
                   __html: `

@@ -8,8 +8,8 @@ export type Props = {
 
 const AppbarGray: React.FC<Props> = ({ onClick, className }) => (
   <div className={cn(styles.default, className)}>
-    <button onClick={onClick} className={styles.button}>
-      <img className={styles.logo} src="/logo_gray.svg" width={250} height={50} />
+    <button onClick={onClick} className={styles.button} aria-label="Logo">
+      <img className={styles.logo} src="/logo_gray.svg" width={250} height={50} alt="Historedge" />
     </button>
   </div>
 )

@@ -84,29 +84,21 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
       <div className={styles.container}>
         <h2 className={styles.name}>Ren Shimosawa</h2>
         <div className={styles.imgContainer}>
-          <img src="face-icon.svg" alt="Ren Shimosawaのアイコン"></img>
+          <img src="face-icon.svg" alt="Ren Shimosawaのアイコン" width={200} height={200} />
         </div>
-        <p className={styles.ocupation}>
-          フロントエンドエンジニア
-          <br />
-          グラフィックデザイナー
-        </p>
+        <p className={styles.ocupation}>フロントエンドエンジニア</p>
         {/* <SkillButton onSkillClick={onSkillClick} label="Skill Sheet" /> */}
         <div className={styles.tableContainer}>
           <table className={styles.table}>
             <tbody>
               <tr>
                 <td className={styles.date}>2020/02～</td>
-                <td>
-                  【開業】
-                  <br className={styles.spBr} />
-                  動画編集(Emotional Aomori)
-                </td>
+                <td>Youtube動画編集者</td>
               </tr>
               <tr>
                 <td className={styles.date}>2020/10～</td>
                 <td>
-                  【Quantum Box.Inc】
+                  <span className={styles.strong}>Quantum Box.Inc </span>
                   <br className={styles.spBr} />
                   グラフィックデザイナー
                 </td>
@@ -114,7 +106,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <tr>
                 <td className={styles.date}>2021/01～</td>
                 <td>
-                  【Quantum Box.Inc】
+                  <span className={styles.strong}>Quantum Box.Inc </span>
                   <br className={styles.spBr} />
                   フロントエンドエンジニア
                 </td>
@@ -122,7 +114,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
               <tr>
                 <td className={styles.date}>2021/10～</td>
                 <td>
-                  【freee株式会社】
+                  <span className={styles.strong}>freee株式会社 </span>
                   <br className={styles.spBr} />
                   フロントエンドエンジニア
                 </td>
@@ -138,6 +130,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             target="_blank"
             onClick={ClickFacebook}
             className={styles.facebookIcon}
+            aria-label="Facebookを開く"
           >
             <IconButton className={styles.icon} type="facebook" />
           </a>
@@ -148,6 +141,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             target="_blank"
             onClick={ClickTwitter}
             className={styles.twitterIcon}
+            aria-label="Twitterを開く"
           >
             <IconButton className={styles.icon} type="twitter" />
           </a>
@@ -158,6 +152,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             target="_blank"
             onClick={ClickGithub}
             className={styles.githubIcon}
+            aria-label="Githubを開く"
           >
             <IconButton className={styles.icon} type="github" />
           </a>
@@ -168,6 +163,7 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             target="_blank"
             onClick={ClickZenn}
             className={styles.zennIcon}
+            aria-label="Zennを開く"
           >
             <IconButton className={styles.icon} type="zenn" />
           </a>
