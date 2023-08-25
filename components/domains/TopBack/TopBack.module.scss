@@ -6,8 +6,6 @@
     height: 50vh;
   }
   .backgroundPc {
-    width: 100vw;
-    height: 70vh;
     @include sp {
       display: none;
     }
