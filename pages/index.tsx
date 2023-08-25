@@ -24,7 +24,7 @@ const Home: React.FC = () => {
       <HeadCompo ogImage={OgpImage} currentPathId={path} />
       <main className={styles.main}>
         <AppbarWhite className={styles.appbar} onClick={() => router.push('/')} />
-        <Top className={styles.top} title="Knowledge of history" />
+        <Top className={styles.top} title="History and Knowledge" />
         <Fade>
           <Profile className={styles.profile} onSkillClick={() => router.push('/skill-sheet')} />
           <div>
@@ -36,21 +36,24 @@ const Home: React.FC = () => {
                 <ImgCard
                   labelStyle={{ color: '#575757' }}
                   label="【Web制作】it feels it HP"
-                  imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/ogp.jpg?alt=media&token=fff0561e-3cd7-45e1-9a3c-8be8d33cdf8d"
+                  imgUrl="/it-feels-it.png"
+                  alt="it feels itホームページの画像"
                 />
               </a>
               <a href="https://quantum-box.com/" target="_blank">
                 <ImgCard
                   labelStyle={{ color: '#575757' }}
                   label="【Web制作】Quantum Box HP"
-                  imgUrl="https://firebasestorage.googleapis.com/v0/b/allergy-card-c1149.appspot.com/o/OGP.png?alt=media&token=efe1ff32-29a9-4384-a3ad-6a42a20cd9cf"
+                  imgUrl="/QBox-image.png"
+                  alt="Quantum Boxホームページの画像"
                 />
               </a>
               <a href="https://prtimes.jp/main/html/rd/p/000000001.000069392.html" target="_blank">
                 <ImgCard
                   labelStyle={{ color: '#575757' }}
                   label="【PRtimes】アレルギーカード"
-                  imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/yellowGreen3.png?alt=media&token=7595e878-3672-49e2-be88-e7c54cce8aaa"
+                  imgUrl="/allergy-card-image.png"
+                  alt="スマホアプリ アレルギーカードのPR"
                 />
               </a>
               <VideoCard
@@ -69,14 +72,16 @@ const Home: React.FC = () => {
                 <ImgCard
                   labelStyle={{ color: '#575757' }}
                   label="八戸市"
-                  imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/Overlay.png?alt=media&token=47dd02ee-efb8-438a-9d9c-ccd8d5a9eb9c"
+                  imgUrl="/ol-hachinohe.png"
+                  alt="八戸城オーバーレイのサムネイル"
                 />
               </a>
               <a href="/map/kyoto/">
                 <ImgCard
                   labelStyle={{ color: '#575757' }}
                   label="京都"
-                  imgUrl="https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kyoto.png?alt=media&token=b688df04-fee8-4cae-a631-8f1ed478a329"
+                  imgUrl="/ol-kyoto.png"
+                  alt="平安京オーバーレイのサムネイル"
                 />
               </a>
             </div>
