@@ -6,6 +6,7 @@
     height: 50vh;
   }
   .backgroundPc {
+    aspect-ratio: 851 / 531;
     @include sp {
       display: none;
     }
