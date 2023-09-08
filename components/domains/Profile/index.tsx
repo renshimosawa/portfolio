@@ -2,12 +2,8 @@ import styles from './Profile.module.scss'
 import cn from 'classnames'
 import IconButton from '../../bases/IconButton'
 import React, { CSSProperties, useCallback, useMemo, useState } from 'react'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
-import Link from 'next/link'
+
 import Tooltips from '../../bases/Tooltips'
-import * as gtag from '../../../src/lib/gtag'
-import SkillButton from '../../bases/SkillButton'
-import ReactTooltip from 'react-tooltip'
 
 export type Props = {
   className?: string
@@ -51,34 +47,7 @@ const useFadeInOut = (durationSec: number) => {
 
 const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
   const { toggleDisplay, boxStyle } = useFadeInOut(0.2)
-  const ClickFacebook = () => {
-    gtag.event({
-      action: 'click_facebook',
-      category: 'link_button',
-      label: 'facebook',
-    })
-  }
-  const ClickTwitter = () => {
-    gtag.event({
-      action: 'click_twitter',
-      category: 'link_button',
-      label: 'twitter',
-    })
-  }
-  const ClickGithub = () => {
-    gtag.event({
-      action: 'click_github',
-      category: 'link_button',
-      label: 'github',
-    })
-  }
-  const ClickZenn = () => {
-    gtag.event({
-      action: 'click_zenn',
-      category: 'link_button',
-      label: 'github',
-    })
-  }
+
   return (
     <div className={cn(styles.default, className)}>
       <div className={styles.container}>
@@ -128,7 +97,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             href="https://www.facebook.com/ren.shimosawa"
             data-tip="Facebookを開く"
             target="_blank"
-            onClick={ClickFacebook}
             className={styles.facebookIcon}
             aria-label="Facebookを開く"
           >
@@ -139,7 +107,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             href="https://twitter.com/ren_shimosawa"
             data-tip="Twitterを開く"
             target="_blank"
-            onClick={ClickTwitter}
             className={styles.twitterIcon}
             aria-label="Twitterを開く"
           >
@@ -150,7 +117,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             href="https://github.com/renshimosawa"
             data-tip="Githubを開く"
             target="_blank"
-            onClick={ClickGithub}
             className={styles.githubIcon}
             aria-label="Githubを開く"
           >
@@ -161,7 +127,6 @@ const Profile: React.FC<Props> = ({ className, onSkillClick }) => {
             href="https://zenn.dev/renshimosawa"
             data-tip="Zennを開く"
             target="_blank"
-            onClick={ClickZenn}
             className={styles.zennIcon}
             aria-label="Zennを開く"
           >
