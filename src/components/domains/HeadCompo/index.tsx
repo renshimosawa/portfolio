@@ -30,7 +30,7 @@ const HeadCompo: React.FC<props> = ({
 }) => {
   const currentPath = domain + currentPathId;
   return (
-    <Head>
+    <head>
       <title>{title ?? Title}</title>
       <link rel="icon" href="/site-favicon.png" />
       <meta charSet="utf-8" />
@@ -74,7 +74,7 @@ const HeadCompo: React.FC<props> = ({
         as="font"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
-    </Head>
+    </head>
   );
 };
 
