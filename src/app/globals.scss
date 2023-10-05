@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #525252;
+  font-family:
+    "Josefin Sans",
+    Hiragino Kaku Gothic ProN,
+    Roboto,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+a,
+button {
+  cursor: pointer;
+}
+a {
+  transition: 0.3s;
+}
+a:hover {
+  opacity: 0.7;
+  transition: 0.3s;
+}
+.backgroundPc,
+.backgroundSp {
+  -webkit-mask-image: -webkit-linear-gradient(
+    -90deg,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 1) 0%,
+    transparent
+  );
+}
+.video-wrap {
+  display: contents;
+  @media screen and (min-width: 349px) {
+    max-width: 350px; /* ここに動画の横幅を指定 */
+  }
+  @media screen and (max-width: 350px) {
+    max-width: 200px; /* ここに動画の横幅を指定 */
+  }
+}
+
+/* 動画を囲うdiv */
+.video {
+  position: relative;
+  width: 100%; /* 横幅は100%で固定 */
+  height: 0; /* 高さは0にしておく(padding-topで高さを指定するため) */
+  padding-top: 56.25%; /* 高さを指定(16:9) */
+}
+
+/* YouTube埋め込み用のiframe */
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
