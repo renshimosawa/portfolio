@@ -50,7 +50,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
 
   const HeianKyo = () => {
     if (typeof window !== 'undefined') {
-      const nsew = { north: 35.029812, south: 34.97637, east: 135.7715, west: 135.71348769383832 }
+      const nsew = { north: 35.028042, south: 34.977, east: 135.7715, west: 135.714 }
       return <GroundOverlay key={'url'} url={HeianMap} bounds={nsew} opacity={inputValue} />
     }
   }
