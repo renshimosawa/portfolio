@@ -1,7 +1,9 @@
 @import '../../../styles/vars.scss';
 .default {
+  padding-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }

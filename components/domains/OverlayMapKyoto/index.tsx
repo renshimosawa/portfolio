@@ -11,7 +11,7 @@ export type Props = {
 }
 const key = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY
 const containerStyle = {
-  width: '90vw',
+  width: '95vw',
   height: '70vh',
 }
 const center = {
@@ -111,8 +111,9 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
           zoom={15}
           options={{
             gestureHandling: 'greedy',
-            streetViewControl: true,
-            fullscreenControl: true,
+            streetViewControl: false,
+            fullscreenControl: false,
+            zoomControl: false,
             styles: MapStyles,
           }}
         >
@@ -127,7 +128,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
         <Slider
           aria-label="opacity"
           defaultValue={0.5}
-          step={0.1}
+          step={0.05}
           marks
           min={0.0}
           max={1.0}

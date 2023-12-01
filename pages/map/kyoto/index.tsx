@@ -3,6 +3,7 @@ import OverlayMapKyoto from '../../../components/domains/OverlayMapKyoto'
 import HeadCompo from '../../../components/domains/HeadCompo'
 import AppbarGray from '../../../components/domains/AppbarGray'
 import { useRouter } from 'next/router'
+import LogoFooter from '../../../components/domains/LogoFooter'
 
 // OGP
 const Title = '京都古地図'
@@ -22,8 +23,9 @@ const testLabKyoto: React.FC = () => {
         currentPathId={path}
         noindex
       />
-      <AppbarGray onClick={() => router.push('/')} />
+      {/* <AppbarGray onClick={() => router.push('/')} /> */}
       <OverlayMapKyoto />
+      <LogoFooter />
     </div>
   )
 }
