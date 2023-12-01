@@ -19,7 +19,7 @@ const center = {
   lng: 135.741849,
 }
 const HeianMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kyoto.png?alt=media&token=b688df04-fee8-4cae-a631-8f1ed478a329'
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/heiankyo_renew.svg?alt=media&token=a102b2e4-52e6-46bb-8931-b2b87b5103f2'
 const KamakuraMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kamakura.png?alt=media&token=eecd51a3-5c7b-4dd9-8723-99e9c82a8a56'
 const SengokuMap =
@@ -50,7 +50,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
 
   const HeianKyo = () => {
     if (typeof window !== 'undefined') {
-      const nsew = { north: 35.029812, south: 34.97637, east: 135.7715, west: 135.71348769383832 }
+      const nsew = { north: 35.028042, south: 34.977, east: 135.7715, west: 135.714 }
       return <GroundOverlay key={'url'} url={HeianMap} bounds={nsew} opacity={inputValue} />
     }
   }
