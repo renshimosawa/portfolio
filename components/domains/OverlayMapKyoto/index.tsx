@@ -19,7 +19,7 @@ const center = {
   lng: 135.741849,
 }
 const HeianMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kyoto.png?alt=media&token=b688df04-fee8-4cae-a631-8f1ed478a329'
+  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/heiankyo_renew.svg?alt=media&token=a102b2e4-52e6-46bb-8931-b2b87b5103f2'
 const KamakuraMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kamakura.png?alt=media&token=eecd51a3-5c7b-4dd9-8723-99e9c82a8a56'
 const SengokuMap =
