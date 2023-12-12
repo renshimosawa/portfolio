@@ -89,8 +89,7 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
   }
 
   const [currentLocation, setCurrentLocation] = useState(null)
-  useEffect(() => {
-    // 現在地を取得する処理
+  const updateCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords
@@ -100,7 +99,22 @@ const OverlayMapKyoto: React.FC<Props> = ({ className }) => {
         console.error('Error getting current location:', error)
       },
     )
-  }, [])
+  }
+
+  useEffect(() => {
+    // 最初の実行
+    updateCurrentLocation()
+
+    // 30秒ごとに実行するためのタイマー
+    const intervalId = setInterval(() => {
+      updateCurrentLocation()
+    }, 30000)
+
+    // コンポーネントがアンマウントされたらクリーンアップ
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, []) // 空の依存配列を渡して初回のみ実行するようにする
 
   return (
     <div className={cn(styles.default, className)}>
