@@ -84,6 +84,14 @@ const Home: React.FC = () => {
                   alt="平安京オーバーレイのサムネイル"
                 />
               </a>
+              <a href="/map/morioka/">
+                <ImgCard
+                  labelStyle={{ color: '#575757' }}
+                  label="盛岡"
+                  imgUrl="/moriokajou.png"
+                  alt="盛岡城オーバーレイのサムネイル"
+                />
+              </a>
             </div>
           </div>
         </Fade>
