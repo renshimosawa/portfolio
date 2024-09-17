@@ -39,7 +39,7 @@ const OverlayMap: React.FC<Props> = ({ className }) => {
   const OverlayData = () => {
     if (typeof window !== 'undefined') {
       const nsew = { north: 40.52, south: 40.4942, east: 141.513105, west: 141.4666 }
-      return <GroundOverlay key={'url'} url={zoomedMap} bounds={nsew} opacity={inputValue} />
+      return <GroundOverlay key={'url'} url={wideMap} bounds={nsew} opacity={inputValue} />
     }
   }
 
