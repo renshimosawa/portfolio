@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { GoogleMap, LoadScriptNext, GroundOverlay, Marker } from '@react-google-maps/api'
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
+import { originalDomain } from '../OverlayMap'
 
 export type Props = {
   className?: string
@@ -17,8 +18,7 @@ const center = {
   lat: 39.706837,
   lng: 141.150305,
 }
-const wideMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=2aa95e1e-9737-4cf3-afe8-921d95042655'
+const wideMap = `${originalDomain}/maps/mapdata_morioka.svg`
 
 const OverlayMap: React.FC<Props> = ({ className }) => {
   const [inputValue, setInputValue] = React.useState(0.5)
