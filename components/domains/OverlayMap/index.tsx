@@ -17,8 +17,9 @@ const center = {
   lat: 40.513103,
   lng: 141.4897,
 }
-const wideMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdata.svg?alt=media&token=19651b33-029c-4d12-9c81-bc4334aabc1d'
+export const originalDomain = 'https://historedge.com'
+
+const wideMap = `${originalDomain}/maps/mapdata_hachinohe.svg`
 const zoomedMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/mapdatanarrow.svg?alt=media&token=6c137ba9-0ce3-4656-98f1-ee0d02ec248f'
 

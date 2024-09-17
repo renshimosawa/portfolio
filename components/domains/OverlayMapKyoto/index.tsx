@@ -5,6 +5,7 @@ import { GoogleMap, LoadScriptNext, GroundOverlay, Marker } from '@react-google-
 import Box from '@mui/material/Box'
 import Slider from '@mui/material/Slider'
 import SwitchBar from '../../bases/SwitchBar'
+import { originalDomain } from '../OverlayMap'
 
 export type Props = {
   className?: string
@@ -18,10 +19,8 @@ const center = {
   lat: 35.017424,
   lng: 135.741849,
 }
-const HeianMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/heiankyo_renew.svg?alt=media&token=a102b2e4-52e6-46bb-8931-b2b87b5103f2'
-const KamakuraMap =
-  'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/kamakura-kyoto.svg?alt=media&token=af154203-559b-4e25-a0cc-16d5b3606b8a'
+const HeianMap = `${originalDomain}/maps/heiankyo.svg`
+const KamakuraMap = `${originalDomain}/maps/kamakura-kyoto.svg`
 const SengokuMap =
   'https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/EjgoDuQVcAA73u4.jpeg?alt=media&token=1e78a4e6-5fe1-4b18-a359-36129e790169'
 const BakumatsuMap = `https://firebasestorage.googleapis.com/v0/b/emotional-aomori.appspot.com/o/01.jpeg?alt=media&token=3dcaf6d1-0058-4cd0-aad7-42d99463c6da`
